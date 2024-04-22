@@ -31,6 +31,7 @@
     "chart.js": "^4.4.2",
     "date-fns": "^3.3.1",
     "jspdf": "^2.5.1",
+    "multi-search-pipe": "^3.0.6",
     "ng-apexcharts": "^1.9.0",
     "ngx-apexcharts": "^0.4.9",
     "ngx-scrollbar": "^13.0.3",
