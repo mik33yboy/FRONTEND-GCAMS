@@ -96,19 +96,18 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let user of logDashboard">
+          <tr *ngFor="let logDashboard of logDashboardsData">
             <td style="width: 100px; height: 100px">
               <img
-                src="../../../assets/images/avatar-2.jpg"
+                [src]="logDashboard.picture"
                 style="width: 65%; height: 60%; object-fit: cover; border-radius: 50%"
                 alt="Circle Image"
               />
             </td>
-            <td>{{ user.firstName }} {{ user.lastName }}</td>
-            <td>{{ user.domainEmail }}</td>
+            <td>{{ logDashboard.lastName }}</td>
+            <td>{{ logDashboard.domainEmail }}</td>
             <td></td>
-
-            <tbody> </tbody></tr></tbody
+          </tr></tbody
       ></table>
     </div>
   </div>
@@ -126,18 +125,18 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let user of notifDashboard">
+          <tr *ngFor="let notifDashboard of notifDashboardsData">
             <td style="width: 70px; height: 70px">
               <img
-               [src]="user.picture"
+               [src]="notifDashboard.picture"
                 style="width: 65px; height: 60px; object-fit: cover; border-radius: 50%"
                 alt="Circle Image"
               />
             </td>
-            <td>{{ user.lastName }}</td>
-            <td>{{ user.firstName }}</td>
-            <td>{{ user.domainEmail }}</td>
-            <td>{{ user.altEmail }}</td>
+            <td>{{ notifDashboard.lastName }}</td>
+            <td>{{ notifDashboard.firstName }}</td>
+            <td>{{ notifDashboard.domainEmail }}</td>
+            <td>{{ notifDashboard.altEmail }}</td>
             <td
               ><div class="primary-container">
                 <a href="#popup1" class="popup">Resolve Problem</a>

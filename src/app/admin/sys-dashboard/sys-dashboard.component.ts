@@ -27,10 +27,10 @@ import {
 } from 'ng-apexcharts';
 
 export type ChartOptions = {
-  series: ApexAxisChartSeries, ApexNonAxisChartSeries;
+  series: ApexAxisChartSeries;
+  ApexNonAxisChartSeries;
   chart: ApexChart;
   dataLabels: ApexDataLabels;
-  labels: any;
   fill: ApexFill;
   plotOptions: ApexPlotOptions;
   responsive: ApexResponsive[];
@@ -44,32 +44,19 @@ export type ChartOptions = {
 @Component({
   selector: 'app-default',
   standalone: true,
-  imports: [CommonModule, SharedModule, NgApexchartsModule],
+  imports: [CommonModule, SharedModule],
   templateUrl: './sys-dashboard.component.html',
   styleUrls: ['./sys-dashboard.component.scss']
 })
 export class SysDashboardComponent {
-  
-
   // private props
   @ViewChild('growthChart') growthChart: ChartComponent;
   chartOptions: Partial<ChartOptions>;
-  @ViewChild("pieChart") chart: ChartComponent;
+  @ViewChild('pieChart') chart: ChartComponent;
   chartOptions1: Partial<ChartOptions>;
   monthChart: any;
   yearChart: any;
   colorChart = ['#673ab7'];
-
-  
-  // Life cycle events
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.monthChart = new ApexCharts(document.querySelector('#tab-chart-1'), this.monthOptions);
-      this.monthChart.render();
-    }, 500);
-
-    this.logDashboard();
-  }
 
   // public Method
   onNavChange(changeEvent: NgbNavChangeEvent) {
@@ -88,7 +75,6 @@ export class SysDashboardComponent {
     }
   }
 
-  
   monthOptions = {
     chart: {
       type: 'line',
@@ -183,49 +169,57 @@ export class SysDashboardComponent {
     }
   };
 
-  logs: any [] = [];
-  notif: any [] = [];
+  logDashboardsData: any[] = [];
+  notifDashboardsData: any[] = [];
 
-  constructor(){}
-  
+  constructor() {}
+
+  ngOnInit() {
+    this.fetchLogDashboards();
+    this.fetchNotifDashboards();
+  }
+
   //Fetching Logs
-  async logDashboard() {
+  async fetchLogDashboards() {
     try {
       const response = await axios.get('https://66216a2427fcd16fa6c6e28f.mockapi.io/API/V1/users');
-      this.logs = response.data.map((user) => ({
-        rfid: 'RFID' + user.rfid, 
-        mobile: user.mobile, 
-        picture: user.picture,
-        name: user.name,
+      this.logDashboardsData = response.data.map((user) => ({
+        id: user.id,
+        lastName: user.lastname,
+        firstName: user.firstname,
+        middleName: user.middlename,
+        numberOfClass: parseInt(user.numberofclass, 10),
+        rfid: 'RFID' + user.rfid,
+        mobile: user.mobile,
+        domainEmail: user.domainemail,
+        altEmail: user.altemail,
+        picture: user.picture
       }));
-      console.log('Fetched logs:', this.logs);
+      console.log('Fetched logs:', this.logDashboardsData);
     } catch (error) {
       console.error('Error fetching logs: ', error);
     }
   }
 
-//Fetching Notifications
-async notifDashboard() {
-  try {
-    const response = await axios.get('https://66216a2427fcd16fa6c6e28f.mockapi.io/API/V1/users');
-    this.notif = response.data.map((user) => ({
-      id: user.id,
-      lastName: user.lastname, 
-      firstName: user.firstname, 
-      middleName: user.middlename, 
-      numberOfClass: parseInt(user.numberofclass, 10),
-      rfid: 'RFID' + user.rfid, 
-      mobile: user.mobile, 
-      domainEmail: user.domainemail, 
-      altEmail: user.altemail, 
-      picture: user.picture
-    }));
-    console.log('Fetched notifications:', this.notif);
-  } catch (error) {
-    console.error('Error fetching notifications: ', error);
+  //Fetching Notifications
+  async fetchNotifDashboards() {
+    try {
+      const response = await axios.get('https://66216a2427fcd16fa6c6e28f.mockapi.io/API/V1/users');
+      this.notifDashboardsData = response.data.map((user) => ({
+        id: user.id,
+        lastName: user.lastname,
+        firstName: user.firstname,
+        middleName: user.middlename,
+        numberOfClass: parseInt(user.numberofclass, 10),
+        rfid: 'RFID' + user.rfid,
+        mobile: user.mobile,
+        domainEmail: user.domainemail,
+        altEmail: user.altemail,
+        picture: user.picture
+      }));
+      console.log('Fetched notifications:', this.notifDashboardsData);
+    } catch (error) {
+      console.error('Error fetching notifications: ', error);
+    }
   }
 }
-}
-
-
-
