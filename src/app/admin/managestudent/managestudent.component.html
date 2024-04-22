@@ -23,45 +23,44 @@
  <!-- Table View -->
  <div *ngIf="!isTilesView">
   <div class="row">
-     <div class="col-sm-12">
-       <div class="dropdown-container">
-         <input type="text" id="searchInput" placeholder="student Name">
-       </div>
-     </div>
+    <div class="col-sm-12">
+      <div class="dropdown-container">
+        <input type="text" id="searchInput" name="lastname" [(ngModel)]="lastName" (ngModelChange)="Search()" placeholder="Search Student">
+      </div>
+    </div>
   </div>
   <div class="dropdown-container">
-     <table class="fl-table">
-       <thead>
-         <tr>
-           <th>DB #</th>
-           <th>LAST NAME</th>
-           <th>FIRST NAME</th>
-           <th>MIDDLE NAME</th>
-           <th>NO. OF CLASS</th>
-           <th>RFID #</th>
-           <th>MOBILE #</th>
-           <th>DOMAIN EMAIL</th>
-           <th>ALT EMAIL</th>
-           <th></th>
-         </tr>
-       </thead>
-       <tbody>
-         <tr *ngFor="let student of students">
-           <td>{{ student.id }}</td>
-           <td>{{ student.lastName }}</td>
-           <td>{{ student.firstName }}</td>
-           <td>{{ student.middleName }}</td>
-           <td>{{ student.numberOfClass }}</td>
-           <td>{{ student.rfid }}</td>
-           <td>{{ student.mobile }}</td>
-           <td>{{ student.domainEmail }}</td>
-           <td>{{ student.altEmail }}</td>
-           <td class="action-buttons">
-             <button class="primary" onclick="window.dialog.showModal();">View</button>
-             <button class="primary" onclick=";">Delete</button>
-           </td>
-         </tr>
-       </tbody>
-     </table>
+    <table class="fl-table">
+      <thead>
+        <tr>
+          <th>DB #</th>
+          <th>LAST NAME</th>
+          <th>FIRST NAME</th>
+          <th>MIDDLE NAME</th>
+          <th>NO. OF CLASS</th>
+          <th>RFID #</th>
+          <th>MOBILE #</th>
+          <th>DOMAIN EMAIL</th>
+          <th>ALT EMAIL</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <td>{{ student.id }}</td>
+          <td>{{ student.lastName }}</td>
+          <td>{{ student.firstName }}</td>
+          <td>{{ student.middleName }}</td>
+          <td>{{ student.numberOfClass }}</td>
+          <td>{{ student.rfid }}</td>
+          <td>{{ student.mobile }}</td>
+          <td>{{ student.domainEmail }}</td>
+          <td>{{ student.altEmail }}</td>
+          <td class="action-buttons">
+            <button class="primary" onclick="window.dialog.showModal();">View</button>
+            <button class="primary" onclick=";">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
- </div>

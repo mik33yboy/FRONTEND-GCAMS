@@ -23,6 +23,7 @@ export class SysManageStudentsComponent {
   }
 
   students: any[] = [];
+  lastName: any;
 
   constructor(){}
 
@@ -50,6 +51,16 @@ export class SysManageStudentsComponent {
       console.log('Fetched students:', this.students);
     } catch (error) {
       console.error('Error fetching students: ', error);
+    }
+  }
+
+  Search() {
+    if (this.lastName === "") {
+      this.ngOnInit();
+    } else {
+      this.students = this.students.filter(res => {
+        return res.lastName.toLocaleLowerCase().match(this.lastName.toLocaleLowerCase());
+      });
     }
   }
 }
