@@ -96,7 +96,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let logDashboard of logDashboardsData">
+          <tr *ngFor="let logDashboard of logDashboardsData.slice(0, 5)">
             <td style="width: 100px; height: 100px">
               <img
                 [src]="logDashboard.picture"
@@ -125,7 +125,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let notifDashboard of notifDashboardsData">
+          <tr *ngFor="let notifDashboard of notifDashboardsData.slice(0, 7)">
             <td style="width: 70px; height: 70px">
               <img
                [src]="notifDashboard.picture"
