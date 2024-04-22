@@ -88,65 +88,7 @@ export class SysDashboardComponent {
     }
   }
 
-  ListGroup = [
-    {
-      name: 'College of Computer Studies',
-      profit: 'BSCS, BSEMC, BSIT, ACT',
-      invest: '623 Students',
-      bgColor: 'bg-light-success',
-      icon: 'ti ti-user',
-      color: 'text-success'
-    },
-    {
-      name: 'College of Education, Arts and Sciences',
-      profit: 'MATHSCI, ENGLISH, FILIPINO, SOC-STUD, BEED, BPED, BCAED',
-      invest: '747 Students',
-      bgColor: 'bg-light-success',
-      icon: 'ti ti-user',
-      color: 'text-success'
-    },
-    {
-      name: 'College of Allied Health Studies',
-      profit: 'BSN, BSM',
-      invest: '249 Students',
-      bgColor: 'bg-light-success',
-      icon: 'ti ti-user',
-      color: 'text-success'
-    },
-    {
-      name: 'College of Hospitality, Tourism and Management',
-      profit: 'BSTM, BSHM,',
-      invest: '498 Students',
-      bgColor: 'bg-light-success',
-      icon: 'ti ti-user',
-      color: 'text-success'
-    },
-    {
-      name: 'College of Business and Accountancy',
-      profit: 'BSBA, BSCA',
-      invest: '374 Students',
-      bgColor: 'bg-light-success',
-      icon: 'ti ti-user',
-      color: 'text-success'
-    },
-    {
-      name: 'College Faculty',
-      profit: 'Program Coordinators',
-      invest: '23 Coordinators',
-      bgColor: 'bg-light-success',
-      icon: 'ti ti-user',
-      color: 'text-success'
-    },
-    {
-      name: 'College Proctors',
-      profit: 'Subject Teachers',
-      invest: '20 Teachers',
-      bgColor: 'bg-light-success',
-      icon: 'ti ti-user',
-      color: 'text-success'
-    }
-  ];
-
+  
   monthOptions = {
     chart: {
       type: 'line',
