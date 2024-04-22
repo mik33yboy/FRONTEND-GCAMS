@@ -1,0 +1,288 @@
+
+
+  <div class="row">
+    <!-- [ sample-page ] start -->
+    <div class="col-xl-4 col-md-6">
+      <div class="card bg-dark-green dashnum-card text-white overflow-hidden" style="background-image: url('../../../assets/images/CARD_BG.png'); background-size: cover;">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <div class="avtar">
+                <i class="text-white ti ti-folder"></i>
+              </div>
+            </div>
+        
+                
+          </div>
+          <div class="row">
+            <div class="col">
+              <span class="text-white d-block fs-1 fw-bold my-2">9 <i class="ti ti-arrow-up-right-circle opacity-50"></i></span>        
+              <p class="mb-0 opacity-50">Your Classes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  
+  
+    <div class="col-xl-4 col-md-6">
+      <div class="card bg-dark-green dashnum-card text-white overflow-hidden" style="background-image: url('../../../assets/images/CARD_BG.png'); background-size: cover;">
+        <span class="round small"></span>
+        <span class="round big"></span>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <div class="avtar">
+                <i class="text-white ti ti-user"></i>
+              </div>
+            </div>
+            <div class="col-auto">
+              <ul ngbNav class="nav-tabs nav-pills" #nav="ngbNav" (navChange)="onNavChange($event)">
+                <li class="nav-item" [ngbNavItem]="1">
+                  <ng-template ngbNavContent>
+                    <div class="row">
+                      <div class="col-6">
+                        <span class="text-white d-block fs-1 fw-bold my-2">232<i class="ti ti-arrow-up-right-circle opacity-50"></i></span>
+                        <p class="mb-0 opacity-50">Your Students</p>
+                      </div>
+                    </div>
+                  </ng-template>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div [ngbNavOutlet]="nav"> </div>
+        </div>
+      </div>
+    </div>
+  
+   
+  <!-- Inside the existing <div class="col-xl-4 col-md-6"> -->
+    <div class="col-xl-4 col-md-6">
+      <div class="card bg-dark-green dashnum-card text-white overflow-hidden" style="background-image: url('../../../assets/images/CARD_BG.png'); background-size: cover;">
+        <span class="round small"></span>
+        <span class="round big"></span>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <div class="avtar">
+                <i class="text-white ti ti-user"></i> <!-- New icon for students -->
+              </div>
+            </div>
+            <div class="col-auto">
+              <!-- If you want to keep the dropdown menu, you can add it here -->
+            </div>
+          </div>
+          <span class="text-white d-block fs-1 fw-bold my-2">222 <i class="ti ti-arrow-up-right-circle opacity-50"></i></span>
+          <p class="mb-0 opacity-50">Your Attendance Generated</p> <!-- New card displaying Total Students -->
+        </div>
+      </div>
+    </div>
+    
+  
+  
+    <div class="col-xl-8 col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row mb-3 align-items-center">
+            <div class="col">
+              <h3>Overall Attendance Chart </h3>
+            </div>
+            <div class="col-auto">
+              <select class="form-select">
+                <option>1ST SEMESTER</option>
+                <option>2ND SEMESTER</option>
+              </select>
+            </div>
+          </div>
+          <div id="growthChart">
+            <apx-chart
+              [series]="chartOptions.series"
+              [chart]="chartOptions.chart"
+              [dataLabels]="chartOptions.dataLabels"
+              [plotOptions]="chartOptions.plotOptions"
+              [responsive]="chartOptions.responsive"
+              [xaxis]="chartOptions.xaxis"
+              [colors]="chartOptions.colors"
+              [grid]="chartOptions.grid"
+              [tooltip]="chartOptions.tooltip"
+            ></apx-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+    
+    <div class="col-xl-4 col-md-12">
+      <div class="card mb-3"> <!-- Added margin-bottom to the card -->
+        <div class="card-body">
+          <div class="row mb-3 align-items-center"> <!-- Removed mb-3 class to remove margin-bottom -->
+            <div class="col">
+              <h3>Student Status</h3>
+            </div>
+          </div>
+          <table class="responsive-table">
+            <thead>
+              <tr>
+                <th>LAST NAME</th>
+                <th>FIRST NAME</th>
+                <th>CLASS</th>
+                <th>LATE</th>
+                <th>ABSENT</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Rosario</td>
+                <td>Mark</td>
+                <td>CodeChum</td>
+                <td>3</td>
+                <td>5</td>
+                <td>
+                  <select id="mySelect">
+                    <option value="cleared" class="late-box">Pending</option>
+                    <option value="pending" class="absent-box">FDA</option>
+                    <option value="not-valid" class="drop-box">DROP</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Benitez</td>
+                <td>Grace</td>
+                <td>Programming</td>
+                <td>3</td>
+                <td>5</td>
+                <td>
+                  <select id="mySelect">
+                    <option value="cleared" class="late-box">Pending</option>
+                    <option value="pending" class="absent-box">FDA</option>
+                    <option value="not-valid" class="drop-box">DROP</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Trinidad</td>
+                <td>Hannah</td>
+                <td>JavaScript</td>
+                <td>3</td>
+                <td>5</td>
+                <td>
+                  <select id="mySelect">
+                    <option value="cleared" class="late-box">Pending</option>
+                    <option value="pending" class="absent-box">FDA</option>
+                    <option value="not-valid" class="drop-box">DROP</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Hernandez</td>
+                <td>Maxkie</td>
+
+                <td>PHP</td>
+                <td>3</td>
+                <td>5</td>
+                <td>
+                  <select id="mySelect">
+                    <option value="cleared" class="late-box">Pending</option>
+                    <option value="pending" class="absent-box">FDA</option>
+                    <option value="not-valid" class="drop-box">DROP</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Lopez</td>
+                <td>John</td>
+                <td>MySQL</td>
+                <td>3</td>
+                <td>5</td>
+                <td>
+                  <select id="mySelect">
+                    <option value="cleared" class="late-box">Pending</option>
+                    <option value="pending" class="absent-box">FDA</option>
+                    <option value="not-valid" class="drop-box">DROP</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Pascual</td>
+                <td>Tracy</td>
+                <td>CodeChum</td>
+                <td>3</td>
+                <td>5</td>
+                <td>
+                <select id="mySelect">
+                  <option value="cleared" class="late-box">Pending</option>
+                  <option value="pending" class="absent-box">FDA</option>
+                  <option value="not-valid" class="drop-box">DROP</option>
+                </select>
+              </td>
+              </tr>
+              <tr>
+                <td>Molino</td>
+                <td>Luis</td>
+                <td>C++</td>
+                <td>3</td>
+                <td>5</td>
+                <td>
+                <select id="mySelect">
+                  <option value="cleared" class="late-box">Pending</option>
+                  <option value="pending" class="absent-box">FDA</option>
+                  <option value="not-valid" class="drop-box">DROP</option>
+                </select>
+              </td>
+              </tr>
+              <tr>
+                <td>Rosario</td>
+                <td>Mark</td>
+                <td>CodeChum</td>
+                <td>3</td>
+                <td>5</td>
+                <td>
+                  <select id="mySelect">
+                    <option value="cleared" class="late-box">Pending</option>
+                    <option value="pending" class="absent-box">FDA</option>
+                    <option value="not-valid" class="drop-box">DROP</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Benitez</td>
+                <td>Grace</td>
+                <td>Programming</td>
+                <td>3</td>
+                <td>5</td>
+                <td>
+                  <select id="mySelect">
+                    <option value="cleared" class="late-box">Pending</option>
+                    <option value="pending" class="absent-box">FDA</option>
+                    <option value="not-valid" class="drop-box">DROP</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Trinidad</td>
+                <td>Hannah</td>
+                <td>JavaScript</td>
+                <td>3</td>
+                <td>5</td>
+                <td>
+                  <select id="mySelect">
+                    <option value="cleared" class="late-box">Pending</option>
+                    <option value="pending" class="absent-box">FDA</option>
+                    <option value="not-valid" class="drop-box">DROP</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+                </div>
+              </div>
+        </div>
+      </div>
+  
+  
+  
+  

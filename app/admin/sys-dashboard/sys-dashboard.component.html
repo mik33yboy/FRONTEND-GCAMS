@@ -1,0 +1,340 @@
+
+
+  <div class="row">
+    <!-- [ sample-page ] start -->
+    <div class="col-xl-4 col-md-6">
+      <div class="card bg-dark-green dashnum-card text-white overflow-hidden" style="background-image: url('../../../assets/images/CARD_BG.png'); background-size: cover;">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <div class="avtar">
+                <i class="text-white ti ti-folder"></i>
+              </div>
+            </div>
+        
+                
+          </div>
+          <div class="row">
+            <div class="col">
+              <span class="text-white d-block fs-1 fw-bold my-2">230 <i class="ti ti-arrow-up-right-circle opacity-50"></i></span>        
+              <p class="mb-0 opacity-50">Total Classes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  
+  
+    <div class="col-xl-4 col-md-6">
+      <div class="card bg-dark-green dashnum-card text-white overflow-hidden" style="background-image: url('../../../assets/images/CARD_BG.png'); background-size: cover;">
+        <span class="round small"></span>
+        <span class="round big"></span>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <div class="avtar">
+                <i class="text-white ti ti-user"></i>
+              </div>
+            </div>
+            <div class="col-auto">
+              <ul ngbNav class="nav-tabs nav-pills" #nav="ngbNav" (navChange)="onNavChange($event)">
+                <li class="nav-item" [ngbNavItem]="1">
+                  <ng-template ngbNavContent>
+                    <div class="row">
+                      <div class="col-6">
+                        <span class="text-white d-block fs-1 fw-bold my-2">35<i class="ti ti-arrow-up-right-circle opacity-50"></i></span>
+                        <p class="mb-0 opacity-50">Total Proctors</p>
+                      </div>
+                    </div>
+                  </ng-template>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div [ngbNavOutlet]="nav"> </div>
+        </div>
+      </div>
+    </div>
+  
+   
+  <!-- Inside the existing <div class="col-xl-4 col-md-6"> -->
+    <div class="col-xl-4 col-md-6">
+      <div class="card bg-dark-green dashnum-card text-white overflow-hidden" style="background-image: url('../../../assets/images/CARD_BG.png'); background-size: cover;">
+        <span class="round small"></span>
+        <span class="round big"></span>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <div class="avtar">
+                <i class="text-white ti ti-user"></i> <!-- New icon for students -->
+              </div>
+            </div>
+            <div class="col-auto">
+              <!-- If you want to keep the dropdown menu, you can add it here -->
+            </div>
+          </div>
+          <span class="text-white d-block fs-1 fw-bold my-2">2,400 <i class="ti ti-arrow-up-right-circle opacity-50"></i></span>
+          <p class="mb-0 opacity-50">Total Students</p> <!-- New card displaying Total Students -->
+        </div>
+      </div>
+    </div>
+    
+
+
+  
+  
+
+
+
+  
+  
+    
+    <div class="col-xl-4 col-md-12">
+      <div class="dropdown-container">
+        <table class="fl-table">
+            <thead>
+            <tr>
+              <th>User</th>
+              <th>Name</th>
+              <th>Log In Time</th>
+              <th>Log Out Time</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td style="width: 100px; height: 100px;">
+<img src="../../../assets/images/avatar-2.jpg" style="width: 65%; height: 60%; object-fit: cover; border-radius: 50%;" alt="Circle Image">
+            </td>
+                        <td>Mike Dayandante</td>
+                        <td>June 18, 2023<br>7:30:12 PM<br>Monday</td>
+                        <td></td>
+                        
+                        
+                        
+            </tr>         
+            <tr>
+              <td style="width: 100px; height: 100px;">
+<img src="../../../assets/images/avatar-4.jpg" style="width: 65%; height: 60%; object-fit: cover; border-radius: 50%;" alt="Circle Image">
+            </td>
+                        <td>Mike Dayandante</td>
+                        <td>June 18, 2023<br>7:30:12 PM<br>Monday</td>
+                        <td></td>
+                        
+                        
+                        
+            </tr>   
+            <tr>
+              <td style="width: 100px; height: 100px;">
+<img src="../../../assets/images/avatar-3.jpg" style="width: 65%; height: 60%; object-fit: cover; border-radius: 50%;" alt="Circle Image">
+            </td>
+                        <td>Mike Dayandante</td>
+                        <td>June 18, 2023<br>7:30:12 PM<br>Monday</td>
+                        <td></td>
+                        
+                        
+                        
+            </tr>   
+            <tr>
+              <td style="width: 100px; height: 100px;">
+<img src="../../../assets/images/avatar-5.jpg" style="width: 65%; height: 60%; object-fit: cover; border-radius: 50%;" alt="Circle Image">
+            </td>
+                        <td>Mike Dayandante</td>
+                        <td>June 18, 2023<br>7:30:12 PM<br>Monday</td>
+                        <td>June 18, 2023<br>9:23:41 PM<br>Monday</td>
+                        
+                        
+                        
+            </tr>   
+            <tr>
+              <td style="width: 100px; height: 100px;">
+<img src="../../../assets/images/avatar-2.jpg" style="width: 65%; height: 60%; object-fit: cover; border-radius: 50%;" alt="Circle Image">
+            </td>
+                        <td>Mike Dayandante</td>
+                        <td>June 18, 2023<br>7:30:12 PM<br>Monday</td>
+                        <td>June 18, 2023<br>12:41:22 PM<br>Monday</td>
+                        
+                        
+                        
+            </tr>   
+            <tr>
+              <td style="width: 100px; height: 100px;">
+<img src="../../../assets/images/avatar-6.jpg" style="width: 65%; height: 60%; object-fit: cover; border-radius: 50%;" alt="Circle Image">
+            </td>
+                        <td>Mike Dayandante</td>
+                        <td>June 18, 2023<br>7:30:12 PM<br>Monday</td>
+                        <td></td>
+                        
+                        
+                        
+            </tr>   
+            <tbody>
+        </table>
+       
+    </div>
+    </div>
+  
+    
+    
+    
+    
+  
+        <!----- chart -->
+
+        <div class="col-xl-8 col-md-12">
+          <div class="dropdown-container">
+            <table class="fl-table">
+            <thead>
+              <tr>
+                <th><button id="prevBtn" style="color: white; margin-top: -2px">Previous</button></th>
+                <th colspan="4" style="text-align: center; font-weight: bold; font-size: 22px;">SYSTEM NOTIFICATIONS</th>
+                <th><button id="nextBtn" style="color: white; margin-top: -2px">Next</button></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="width: 70px; height: 70px;">
+                  <img src="../../../assets/images/avatar-1.jpg" style="width: 65px; height: 60px; object-fit: cover; border-radius: 50%;" alt="Circle Image">
+                                    </td>
+                <td>Fedeluz</td>
+                <td>Grace</td>
+                <td>03-12-2024 : 7:00:32 PM</td>
+                <td>Sent a request to change password</td>
+              <td><div class="primary-container">
+               <a href="#popup1" class="popup">Resolve Problem</a>
+              </div>
+            </td>
+              </tr>
+              <tr>
+                <td style="width: 70px; height: 70px;">
+                  <img src="../../../assets/images/avatar-2.jpg" style="width: 65px; height: 60px; object-fit: cover; border-radius: 50%;" alt="Circle Image"></td>
+                <td>Gimeo</td>
+                <td>Mae</td>
+                <td>03-12-2024 : 7:00:32 PM</td>
+                <td>Sent a request to change password</td>
+                <td><div class="primary-container">
+                  <a href="#popup1" class="popup">Resolve Problem</a>
+                 </div>
+               </td>
+               
+              </tr>
+              <tr>
+                <td style="width: 70px; height: 70px;">
+                  <img src="../../../assets/images/avatar-3.jpg" style="width: 65px; height: 60px; object-fit: cover; border-radius: 50%;" alt="Circle Image"></td>
+                <td>Rosete</td>
+                <td>Sonny</td>
+                <td>03-12-2024 : 7:00:32 PM</td>
+                <td>Sent a request to change password</td>
+                <td><div class="primary-container">
+                  <a href="#popup1" class="popup">Resolve Problem</a>
+                 </div>
+               </td>
+               
+              </tr>
+              <tr>
+                <td style="width: 70px; height: 70px;">
+                  <img src="../../../assets/images/avatar-4.jpg" style="width: 65px; height: 60px; object-fit: cover; border-radius: 50%;" alt="Circle Image"></td>
+                <td>Bangal</td>
+                <td>Celine</td>
+                <td>03-12-2024 : 7:00:32 PM</td>
+                <td>Sent a request to change password</td>
+                <td><div class="primary-container">
+                  <a href="#popup1" class="popup">Resolve Problem</a>
+                 </div>
+               </td>
+               
+              </tr>
+              <tr>
+                <td style="width: 70px; height: 70px;">
+                  <img src="../../../assets/images/avatar-5.jpg" style="width: 65px; height: 60px; object-fit: cover; border-radius: 50%;" alt="Circle Image"></td>
+                <td>Natividad</td>
+                <td>Robert</td>
+                <td>03-12-2024 : 7:00:32 PM</td>
+                <td>Sent a request to change password</td>
+                <td><div class="primary-container">
+                  <a href="#popup1" class="popup">Resolve Problem</a>
+                 </div>
+               </td>
+              </tr>
+              <tr>
+                <td style="width: 70px; height: 70px;">
+                  <img src="../../../assets/images/avatar-6.jpg" style="width: 65px; height: 60px; object-fit: cover; border-radius: 50%;" alt="Circle Image"></td>
+                <td>Gonzales</td>
+                <td>Angelica</td>
+                <td>03-12-2024 : 7:00:32 PM</td>
+                <td>Sent a request to change password</td>
+                <td><div class="primary-container">
+                  <a href="#popup1" class="popup">Resolve Problem</a>
+                 </div>
+               </td>
+              </tr>
+              <tr>
+                <td style="width: 70px; height: 70px;">
+                  <img src="../../../assets/images/avatar-1.jpg" style="width: 65px; height: 60px; object-fit: cover; border-radius: 50%;" alt="Circle Image">
+                                    </td>
+                <td>Fedeluz</td>
+                <td>Grace</td>
+                <td>03-12-2024 : 7:00:32 PM</td>
+                <td>Sent a request to change password</td>
+              <td><div class="primary-container">
+               <a href="#popup1" class="popup">Resolve Problem</a>
+              </div>
+            </td>
+              </tr>
+              <tr>
+                <td style="width: 70px; height: 70px;">
+                  <img src="../../../assets/images/avatar-2.jpg" style="width: 65px; height: 60px; object-fit: cover; border-radius: 50%;" alt="Circle Image"></td>
+                <td>Gimeo</td>
+                <td>Mae</td>
+                <td>03-12-2024 : 7:00:32 PM</td>
+                <td>Sent a request to change password</td>
+                <td><div class="primary-container">
+                  <a href="#popup1" class="popup">Resolve Problem</a>
+                 </div>
+               </td>
+               
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    
+      <div id="popup1" class="popup-container">
+          
+          <form action="" id="contact-form">
+            <a href="#" class="close">&times;</a>
+            <div class="input mb">
+              <div class="hidden"><label for="name" class="required">Name</label></div>
+              <div class="icon-container"><input type="text" name="name" id="name" placeholder="Name" class="icon-content" required><span class="fas fa-user icon"></span></div>
+            </div>
+          
+            <div class="input mb">
+              <div class="hidden"><label for="email" class="required">Email</label></div>
+              <div class="icon-container"><input type="email" name="email" id="email" placeholder="Email" class="icon-content" required><span class="fas fa-envelope icon"></span></div>
+            </div>
+          
+            <div class="input mb">
+              <div class="hidden"><label for="subject" class="required">Subject</label></div>
+              <div class="icon-container"><input type="text" name="subject" id="subject" placeholder="Subject" class="icon-content" required><span class="fas fa-pencil-alt icon"></span></div>
+            </div>
+          
+            <div class="input mb">
+              <div class="hidden"><label for="message" class="required">Message</label></div>
+              <div class="icon-container"><textarea name="message" id="message" cols="10" rows="5" placeholder="Message..." class="icon-content" required></textarea><span class="fas fa-quote-left icon"></span></div>
+            </div>
+          
+            <div class="input mb">
+              <button type="submit" class="btn text-center">Send Message</button>
+            </div>
+          </form>
+    
+      </div>
+
+           
+        
+        
+        
+        
+        
+  
+  

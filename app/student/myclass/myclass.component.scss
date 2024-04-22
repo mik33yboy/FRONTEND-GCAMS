@@ -1,0 +1,581 @@
+/* Table Styles */
+.table-wrapper {
+  margin: 10px 70px 70px;
+  box-shadow: 0px 35px 50px rgba(0, 0, 0, 0.2);
+  overflow-x: auto; /* Adding this line to allow horizontal scrolling */
+}
+
+.fl-table {
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: normal;
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  white-space: nowrap;
+  background-color: white;
+}
+
+.fl-table td,
+.fl-table th {
+  text-align: center;
+  padding: 8px;
+}
+
+.fl-table td {
+  border-right: 1px solid #f8f8f8;
+  font-size: 16px;
+}
+
+.fl-table thead th {
+  color: #ffffff;
+  background: #134b3b;
+}
+
+.fl-table thead th:nth-child(odd) {
+  background: #134b3b;
+}
+
+.fl-table tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+  .fl-table {
+    display: block;
+    width: 100%;
+  }
+  .table-wrapper:before {
+    content: 'Scroll horizontally >';
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    color: white;
+    padding: 0 0 10px;
+  }
+  .fl-table thead,
+  .fl-table tbody,
+  .fl-table thead th {
+    display: block;
+  }
+  .fl-table thead th:last-child {
+    border-bottom: none;
+  }
+  .fl-table thead {
+    float: center;
+  }
+  .fl-table tbody {
+    width: auto;
+    position: relative;
+  }
+  .fl-table tbody {
+    overflow-x: auto;
+    overflow-y: hidden; /* Updated this line */
+  }
+  .fl-table td,
+  .fl-table th {
+    padding: 20px 0.625em 0.625em 0.625em;
+    height: 60px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 120px;
+    font-size: 13px;
+    text-overflow: ellipsis;
+  }
+  .fl-table thead th {
+    text-align: center;
+    border-bottom: 1px solid #f7f7f9;
+  }
+  .fl-table tbody tr {
+    display: table-cell;
+  }
+  .fl-table tbody tr:nth-child(odd) {
+    background: none;
+  }
+  .fl-table tr:nth-child(even) {
+    background: transparent;
+  }
+  .fl-table tr td:nth-child(odd) {
+    background: #f8f8f8;
+    border-right: 1px solid #e6e4e4;
+  }
+  .fl-table tr td:nth-child(even) {
+    border-right: 1px solid #e6e4e4;
+  }
+  .fl-table tbody td {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* Updated styles for dropdown container */
+.dropdown-container {
+  display: flex;
+  justify-content: space-between;
+  position: center;
+  background-color: #f9f9f9; /* Light background color */
+  padding: 20px; /* Add padding for spacing */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+/* Updated styles for dropdown */
+.dropdown {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.dropdown select {
+  width: 100%;
+  padding: 12px; /* Increased padding for better touch experience */
+  border: none; /* Remove border for cleaner look */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #fff; /* White background */
+  font-size: 16px;
+  appearance: none; /* Remove default dropdown arrow */
+  outline: none; /* Remove default focus style */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+}
+
+.dropdown select:hover,
+.dropdown select:focus {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add deeper shadow on hover/focus */
+}
+
+/* Updated styles for label */
+label {
+  font-size: 18px; /* Increased font size for better readability */
+  color: #333; /* Darker text color */
+}
+
+/* Updated styles for input */
+input[type='text'] {
+  width: 100%;
+  padding: 12px; /* Increased padding for better touch experience */
+  border: none; /* Remove border for cleaner look */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #fff; /* White background */
+  font-size: 16px;
+  outline: none; /* Remove default focus style */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+}
+
+input[type='text']:hover,
+input[type='text']:focus {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add deeper shadow on hover/focus */
+}
+
+.present-box {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+}
+
+.late-box {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgb(184, 127, 23);
+  color: white;
+  border-radius: 5px;
+}
+
+.absent-box {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgb(184, 23, 23);
+  color: white;
+  border-radius: 5px;
+}
+
+.drop-box {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border-radius: 5px;
+}
+
+.pending-box {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #000; /* Change border color and style as needed */
+  border-radius: 5px;
+}
+
+/* Calendar */
+
+/* dialog */
+
+.input-place {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+  margin-left: 10px;
+  align-items: center;
+  background-color: #bfbfc0;
+  border-radius: 7px;
+  height: 40px;
+  width: 280px;
+  gap: 5px;
+  border: 1px solid #d1d1d1;
+}
+
+.radio-inputs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  background-color: #eee;
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  padding: 0.25rem;
+  width: 300px;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.radio-inputs .radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.radio-inputs .radio input {
+  display: none;
+}
+
+.radio-inputs .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem 0;
+  color: rgba(51, 65, 85, 1);
+  transition: all 0.15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked + .name {
+  background-color: #fff;
+  font-weight: 600;
+}
+
+/* pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -45px;
+  margin-bottom: 40px;
+}
+
+#prevBtn,
+#nextBtn {
+  background-color: transparent;
+  color: #106335;
+  border: 2px solid #106335;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex-end;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#prevBtn:hover,
+#nextBtn:hover {
+  background-color: #106335;
+  color: #fff;
+}
+
+span {
+  margin: 0 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* BUTTONS */
+
+.primary-container {
+  text-align: center;
+  margin-bottom: -25px;
+}
+
+.primary {
+  background-color: #18242c;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px; /* Adjusted padding */
+  text-decoration: none;
+  margin-left: 5px;
+  font-size: 14px; /* Adjusted font size */
+  cursor: pointer;
+  border-radius: 500px; /* Adjusted border radius */
+  transition: background-color 0.3s;
+  margin-top: 5px;
+  display: inline-block; /* Added display property */
+}
+
+.joinClass {
+  background-color: #18242c;
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 5px;
+  font-size: 12px; /* Adjusted font size */
+  font-weight: bold;
+  border-radius: 5px; /* Adjusted border radius */
+  margin-top: 5px;
+}
+
+.popup {
+  background-color: #18242c;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px; /* Adjusted padding */
+  text-decoration: none;
+  margin-left: 5px;
+  font-size: 14px; /* Adjusted font size */
+  cursor: pointer;
+  border-radius: 500px; /* Adjusted border radius */
+  transition: background-color 0.3s;
+  margin-top: 5px;
+  display: inline-block; /* Added display property */
+}
+
+.popup:hover {
+  background-color: #0056b3;
+}
+
+.popup-link {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.popup-link a {
+  background: #333;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 17px;
+  cursor: pointer;
+  margin: 20px;
+  text-decoration: none;
+}
+
+.popup-container {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.3);
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 150%;
+  background-color: rgba(41, 17, 17, 0.61);
+  display: flex;
+  align-items: center;
+}
+.popup-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}
+.popup-content p {
+  font-size: 17px;
+  padding: 10px;
+  line-height: 20px;
+}
+.popup-content a.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  background: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+.popup-content a.close:hover {
+  color: #333;
+}
+
+.popup-content span:hover,
+.popup-content span:focus {
+  color: #971212;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.popup-container:target {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.popup-container h3 {
+  margin: 10px;
+}
+
+
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+  --primary-clr: #00b0f0;
+  --secondary-clr: #f1540f;
+}
+
+p#break {
+  font-weight: lighter;
+  font-size: 0.85rem;
+  line-height: 1;
+
+  margin: 0;
+}
+
+.container {
+  width: 75%;
+  margin: auto;
+  max-width: 700px;
+}
+
+
+.message-title {
+  margin-top: 0;
+  padding-bottom: 0.75em;
+  border-bottom: solid 1px rgb(221, 221, 221);
+  text-align: left;
+}
+
+.message-container {
+  margin-bottom: 8em;
+  max-width: 600px;
+}
+
+form {
+  display: grid;
+
+  grid-template-columns: 90px auto auto;
+  grid-column-gap: 0.5em;
+  grid-row-gap: 2em;
+}
+
+label {
+  font-weight: bold;
+  grid-column: 1/2;
+}
+
+
+input,
+textarea {
+  font-family: "Roboto", sans-serif;
+}
+
+textarea {
+  grid-column: 2/4;
+  border-radius: 2em;
+  border: solid 3px var(--primary-clr);
+  padding: 0.5em 1em;
+}
+
+input:focus,
+textarea:focus {
+  background: rgb(211, 230, 253);
+}
+
+.first-name {
+  grid-column: 2/3;
+}
+
+.last-name {
+  grid-column: 3/4;
+}
+
+.button-container {
+  grid-column: 1/4;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.button {
+  width: 100px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: .4s ease;
+}
+
+.button:hover {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 1024px) {
+  /* Specific to background image */
+  img #background-img {
+    left: 50%;
+    left: -512px; /* 50% */
+  }
+}
+
+
+
+
+.uploadOuter {
+  text-align: center;
+  padding: 20px;
+  strong {
+    padding: 0 10px
+  }
+}
+.dragBox {
+  width: 250px;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  line-height: 95px;
+  color: #999;
+  border: 2px dashed #ccc;
+  display: inline-block;
+  transition: transform 0.3s;
+  input[type="file"] {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    top: 0;
+    left: 0;
+  }
+}
+.draging {
+  transform: scale(1.1);
+}
+#preview {
+  text-align: center;
+  img {
+    max-width: 100%
+  }
+}
