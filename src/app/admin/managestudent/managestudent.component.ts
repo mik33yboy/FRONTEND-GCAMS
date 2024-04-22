@@ -47,9 +47,9 @@ export class SysManageStudentsComponent {
         picture: user.picture
       }));
 
-      console.log('Fetched instructors:', this.students);
+      console.log('Fetched students:', this.students);
     } catch (error) {
-      console.error('Error fetching instructors: ', error);
+      console.error('Error fetching students: ', error);
     }
   }
 }

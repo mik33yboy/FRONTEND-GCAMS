@@ -1,3 +1,5 @@
+// Axios Import
+import axios from 'axios';
 // Angular Import
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -65,6 +67,8 @@ export class SysDashboardComponent {
       this.monthChart = new ApexCharts(document.querySelector('#tab-chart-1'), this.monthOptions);
       this.monthChart.render();
     }, 500);
+
+    this.logDashboard();
   }
 
   // public Method
@@ -236,6 +240,50 @@ export class SysDashboardComponent {
       }
     }
   };
+
+  logs: any [] = [];
+  notif: any [] = [];
+
+  constructor(){}
+  
+  //Fetching Logs
+  async logDashboard() {
+    try {
+      const response = await axios.get('https://66216a2427fcd16fa6c6e28f.mockapi.io/API/V1/users');
+      this.logs = response.data.map((user) => ({
+        rfid: 'RFID' + user.rfid, 
+        mobile: user.mobile, 
+        picture: user.picture,
+        name: user.name,
+      }));
+      console.log('Fetched logs:', this.logs);
+    } catch (error) {
+      console.error('Error fetching logs: ', error);
+    }
+  }
+
+//Fetching Notifications
+async notifDashboard() {
+  try {
+    const response = await axios.get('https://66216a2427fcd16fa6c6e28f.mockapi.io/API/V1/users');
+    this.notif = response.data.map((user) => ({
+      id: user.id,
+      lastName: user.lastname, 
+      firstName: user.firstname, 
+      middleName: user.middlename, 
+      numberOfClass: parseInt(user.numberofclass, 10),
+      rfid: 'RFID' + user.rfid, 
+      mobile: user.mobile, 
+      domainEmail: user.domainemail, 
+      altEmail: user.altemail, 
+      picture: user.picture
+    }));
+    console.log('Fetched notifications:', this.notif);
+  } catch (error) {
+    console.error('Error fetching notifications: ', error);
+  }
 }
+}
+
 
 
