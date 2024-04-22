@@ -1,0 +1,23 @@
+<app-nav-bar (NavCollapse)="this.navCollapsed = !this.navCollapsed" (NavCollapsedMob)="navMobClick()"></app-nav-bar>
+<app-stunavigation
+  class="coded-navbar pc-sidebar custom-navigation"
+  style="background-color: white;"
+  (NavCollapsedMob)="navMobClick()"
+>
+
+</app-stunavigation>
+
+<div class="pc-container">
+  <div class="coded-wrapper">
+    <div class="coded-content">
+      <div class="coded-inner-content">
+        <app-breadcrumb></app-breadcrumb>
+        <div class="main-body">
+          <div class="page-wrapper">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

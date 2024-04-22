@@ -1,0 +1,24 @@
+<body>
+
+<div class="container" id="container">
+  <div class="form-container sign-in-container">
+    <form id="loginForm" (submit)="loginUser(email.value, password.value)">
+      <h1>Sign in</h1>
+      <div class="social-container">
+        <img src="../../assets/images/fav_icon.png" class="social-icon" style="width: 40px; height: 40px; margin-left: 5px;" />
+        <img src="../../assets/images/gc_ccs.png" class="social-icon" style="width: 43px; height: 43px; margin-right: -4px;" />
+        <img src="../../assets/images/OFFICIAL_LOGO.png" class="social-icon" style="width: 50px; height: 50px; margin-right: 5px; " />
+      </div>
+      <input type="email" placeholder="Email" #email />
+      <input type="password" placeholder="Password" #password />
+      <a href="#" (click)="navigateToRegister()"> Don't have an account? <span style="color: green; text-decoration: underline; font-size: 14px;">Register here</span></a>
+      <a href="/"><button class="bn632-hover bn22">Sign In</button></a>
+      <a href="#" (click)="navigateToResetPassword()">Forgot Password?</a>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <img src="assets/images/CARD_BG.png" alt="Image Description" style="width: 650px; height: 500px; position: absolute; left: -250px" />
+  </div>
+</div>
+
+

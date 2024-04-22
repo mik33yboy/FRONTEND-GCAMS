@@ -1,0 +1,13 @@
+<ng-container *ngFor="let breadcrumb of navigationList; let last = last">
+  <div class="page-header" *ngIf="last && breadcrumb.breadcrumbs !== false">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-10">
+        </div>
+        <div class="col-md-2 d-flex justify-content-end"> 
+          <button class="btn btn-primary ml-3" (click)="printData()">Print Data</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
