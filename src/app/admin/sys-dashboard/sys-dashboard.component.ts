@@ -47,68 +47,7 @@ export type ChartOptions = {
   styleUrls: ['./sys-dashboard.component.scss']
 })
 export class SysDashboardComponent {
-  logEntries = [
-    {
-      name: 'Smith John',
-      role: 'Administrator',
-      date: 'January 5, 2023 | 10:30:00AM',
-      device: 'iPhone 12'
-    },
-    {
-      name: 'Garcia Maria',
-      role: 'Coordinator',
-      date: 'March 15, 2023 | 2:45:00PM',
-      device: 'Google Pixel 5'
-    },
-    {
-      name: 'Brown Michael',
-      role: 'Coordinator',
-      date: 'April 25, 2023 | 9:15:00AM',
-      device: 'OnePlus 9 Pro'
-    },
-    {
-      name: 'Taylor Emily',
-      role: 'Instructor',
-      date: 'June 10, 2023 | 4:20:00PM',
-      device: 'Samsung Galaxy S20'
-    },
-    {
-      name: 'Taylor Emily',
-      role: 'Instructor',
-      date: 'June 10, 2023 | 4:20:00PM',
-      device: 'Samsung Galaxy S20'
-    },
-    {
-      name: 'Taylor Emily',
-      role: 'Instructor',
-      date: 'June 10, 2023 | 4:20:00PM',
-      device: 'Samsung Galaxy S20'
-    },
-    {
-      name: 'Taylor Emily',
-      role: 'Instructor',
-      date: 'June 10, 2023 | 4:20:00PM',
-      device: 'Samsung Galaxy S20'
-    },
-    {
-      name: 'Taylor Emily',
-      role: 'Instructor',
-      date: 'June 10, 2023 | 4:20:00PM',
-      device: 'Samsung Galaxy S20'
-    },
-    {
-      name: 'Taylor Emily',
-      role: 'Instructor',
-      date: 'June 10, 2023 | 4:20:00PM',
-      device: 'Samsung Galaxy S20'
-    },
-    {
-      name: 'Chen Wei',
-      role: 'Registrar',
-      date: 'August 2, 2023 | 8:00:00AM',
-      device: 'Xiaomi Mi 11'
-    }
-  ];
+  
 
   // private props
   @ViewChild('growthChart') growthChart: ChartComponent;
