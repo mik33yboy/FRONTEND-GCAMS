@@ -25,7 +25,7 @@
  <div class="row">
     <div class="col-sm-12">
       <div class="dropdown-container">
-        <input type="text" id="searchInput" placeholder="Instructor Name">
+        <input type="text" id="searchInput" name="lastname" [(ngModel)]="lastName" (ngModelChange)="Search()" placeholder="Search Instructor">
       </div>
     </div>
  </div>
