@@ -20,6 +20,7 @@ export class SysManageInstructorComponent {
     this.isTilesView = false;
   }
   instructors: any[] = [];
+  lastName: any;
 
   constructor() {}
 
@@ -47,6 +48,16 @@ export class SysManageInstructorComponent {
       console.log('Fetched instructors:', this.instructors);
     } catch (error) {
       console.error('Error fetching instructors: ', error);
+    }
+  }
+
+  Search() {
+    if (this.lastName === "") {
+      this.ngOnInit();
+    } else {
+      this.instructors = this.instructors.filter(res => {
+        return res.lastName.toLocaleLowerCase().match(this.lastName.toLocaleLowerCase());
+      });
     }
   }
 }
