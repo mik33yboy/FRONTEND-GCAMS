@@ -1,194 +1,192 @@
-
-<div class="content">
-  <div class="card1">
-            <div class="card1-content">
-              <div class="card1-image" style="background-image: url('../../../assets/images/CLASS_BG.png');">
-              </div>
-              <form class="card1-form">
-                <div class="input">
-                  <input type="text" class="input-field" required />
-                  <label class="input-label">Class Name:</label>
-                </div>
-                <div class="input">
-                  <input type="text" class="input-field" required />
-                  <label class="input-label">Class Schedule:</label>
-                </div>
-                <div class="input">
-                  <select class="input-field" required>
-                    <option value=""></option>
-                    <option value="10">10 minutes</option>
-                    <option value="15">15 minutes</option>
-                    <option value="20">20 minutes</option>
-                  </select>
-                  <label class="input-label">Grace Period:</label>
-                </div>
-                <div class="action">
-                  <button class="action-button">Add Class</button>
-                </div>
-              </form>
-            </div>
+<div class="desktop-1">
+  <div class="rectangle-3"></div>
+  <div class="rectangle-10"></div>
+  <div class="rectangle-11"></div>
+  <div class="rectangle-12"></div>
+  <div class="rectangle-102"></div>
+  <div class="_1st-year">1ST YEAR</div>
+  <div class="_2nd-year">2ND YEAR</div>
+  <div class="_3rd-year">3RD YEAR</div>
+  <div class="_4th-year">4TH YEAR</div>
+  <div class="group-10">
+    <div class="rectangle-4"></div>
   </div>
-  <div class="content-main">
-    <div class="card-grid">
-<article class="card" style="background-image: url('../../../assets/images/CARD_BG.png'); background-size: cover; box-shadow: 5px 5px 8px #a8a8a8, -5px -5px 8px #ffffff; font-weight: bold;">
-        <div class="card-header" style="color: white;">
-          <div>
-            <span><img src="../../../assets/images/classroom.png" style="width: 50px; height: 50px; opacity: 100%;"/></span>
-            <h3>Zeplin</h3>
-          </div>
-          <button (click)="copyTextToClipboard('Zeplin')" title="Copy to Clipboard">
-            <img [src]="copiedMap['Zeplin'] ? '../../../assets/images/copied.png' : '../../../assets/images/copy-icon.png'" alt="Copy Icon">
-          </button>
-          </div>
-        <div class="card-body" style="color: white;">
-          <p></p>
-        </div>
-        <div class="card-footer">
-          <button class="bn3637 bn37" (click)="navigateToManageStudent()">View Class</button>
-        </div>
-      </article>
-<article class="card" style="background-image: url('../../../assets/images/CARD_BG.png'); background-size: cover; box-shadow: 5px 5px 8px #a8a8a8, -5px -5px 8px #ffffff; font-weight: bold;">
-        <div class="card-header" style="color: white;">
-          <div>
-            <span><img src="../../../assets/images/classroom.png" style="width: 50px; height: 50px; opacity: 100%;"/></span>
-            <h3>GitHub</h3>
-          </div>
-          <button (click)="copyTextToClipboard('GitHub')" title="Copy to Clipboard">
-            <img [src]="copiedMap['GitHub'] ? '../../../assets/images/copied.png' : '../../../assets/images/copy-icon.png'" alt="Copy Icon">
-          </button>
-        </div>
-        <div class="card-body" style="color: white;">
-          <p></p>
-        </div>
-        <div class="card-footer">
-          <button class="bn3637 bn37" (click)="navigateToManageStudent()">View Class</button>
-        </div>
-      </article>
-<article class="card" style="background-image: url('../../../assets/images/CARD_BG.png'); background-size: cover; box-shadow: 5px 5px 8px #a8a8a8, -5px -5px 8px #ffffff; font-weight: bold;">
-        <div class="card-header" style="color: white;">
-          <div>
-            <span><img src="../../../assets/images/classroom.png" style="width: 50px; height: 50px; opacity: 100%;"/></span>
-            <h3>Figma</h3>
-          </div>
-          <button (click)="copyTextToClipboard('Figma')" title="Copy to Clipboard">
-            <img [src]="copiedMap['Figma'] ? '../../../assets/images/copied.png' : '../../../assets/images/copy-icon.png'" alt="Copy Icon">
-          </button>
-        </div>
-        <div class="card-body" style="color: white;">
-          <p></p>
-        </div>
-        <div class="card-footer">
-          <button class="bn3637 bn37" (click)="navigateToManageStudent()">View Class</button>
-        </div>
-      </article>
-<article class="card" style="background-image: url('../../../assets/images/CARD_BG.png'); background-size: cover; box-shadow: 5px 5px 8px #a8a8a8, -5px -5px 8px #ffffff; font-weight: bold;">
-        <div class="card-header" style="color: white;">
-          <div>
-            <span><img src="../../../assets/images/classroom.png" style="width: 50px; height: 50px; opacity: 100%;"/></span>
-            <h3>Zapier</h3>
-          </div>
-          <button (click)="copyTextToClipboard('Zapier')" title="Copy to Clipboard">
-            <img [src]="copiedMap['Zapier'] ? '../../../assets/images/copied.png' : '../../../assets/images/copy-icon.png'" alt="Copy Icon">
-          </button>
-        </div>
-        <div class="card-body" style="color: white;">
-          <p></p>
-        </div>
-        <div class="card-footer">
-          <button class="bn3637 bn37" (click)="navigateToManageStudent()">View Class</button>
-        </div>
-      </article>
-<article class="card" style="background-image: url('../../../assets/images/CARD_BG.png'); background-size: cover; box-shadow: 5px 5px 8px #a8a8a8, -5px -5px 8px #ffffff; font-weight: bold;">
-        <div class="card-header" style="color: white;">
-          <div>
-            <span><img src="../../../assets/images/classroom.png" style="width: 50px; height: 50px; opacity: 100%;"/></span>
-            <h3>Notion</h3>
-          </div>
-          <button (click)="copyTextToClipboard('Notion')" title="Copy to Clipboard">
-            <img [src]="copiedMap['Notion'] ? '../../../assets/images/copied.png' : '../../../assets/images/copy-icon.png'" alt="Copy Icon">
-          </button>
-        </div>
-        <div class="card-body" style="color: white;">
-          <p></p>
-        </div>
-        <div class="card-footer">
-          <button class="bn3637 bn37" (click)="navigateToManageStudent()">View Class</button>
-        </div>
-      </article>
-      <article class="card" style="background-image: url('../../../assets/images/CARD_BG.png'); background-size: cover; box-shadow: 5px 5px 8px #a8a8a8, -5px -5px 8px #ffffff; font-weight: bold;">
-        <div class="card-header" style="color: white;">
-          <div>
-            <span><img src="../../../assets/images/classroom.png" style="width: 50px; height: 50px; opacity: 100%;"/></span>
-            <h3 >Slack</h3>
-          </div>
-          <button (click)="copyTextToClipboard('Slack')" title="Copy to Clipboard">
-            <img [src]="copiedMap['Slack'] ? '../../../assets/images/copied.png' : '../../../assets/images/copy-icon.png'" alt="Copy Icon">
-          </button>
-        </div>
-        <div class="card-body" style="color: white;">
-          <p></p>
-        </div>
-        <div class="card-footer">
-          <button class="bn3637 bn37" (click)="navigateToManageStudent()">View Class</button>
-        </div>
-      </article>
-<article class="card" style="background-image: url('../../../assets/images/CARD_BG.png'); background-size: cover; box-shadow: 5px 5px 8px #a8a8a8, -5px -5px 8px #ffffff; font-weight: bold;">
-        <div class="card-header" style="color: white;">
-          <div>
-            <span><img src="../../../assets/images/classroom.png" style="width: 50px; height: 50px; opacity: 100%;"/></span>
-            <h3>Zendesk</h3>
-          </div>
-          <button (click)="copyTextToClipboard('Zendesk')" title="Copy to Clipboard">
-            <img [src]="copiedMap['Zendesk'] ? '../../../assets/images/copied.png' : '../../../assets/images/copy-icon.png'" alt="Copy Icon">
-          </button>
-        </div>
-        <div class="card-body" style="color: white;">
-          <p></p>
-        </div>
-        <div class="card-footer">
-          <button class="bn3637 bn37" (click)="navigateToManageStudent()">View Class</button>
-        </div>
-      </article>
-
-<article class="card" style="background-image: url('../../../assets/images/CARD_BG.png'); background-size: cover; box-shadow: 5px 5px 8px #a8a8a8, -5px -5px 8px #ffffff; font-weight: bold;">
-        <div class="card-header" style="color: white;">
-          <div>
-            <span><img src="../../../assets/images/classroom.png" style="width: 50px; height: 50px; opacity: 100%;"/></span>
-            <h3>Dropbox</h3>
-          </div>
-          <button (click)="copyTextToClipboard('Dropbox')" title="Copy to Clipboard">
-            <img [src]="copiedMap['Dropbox'] ? '../../../assets/images/copied.png' : '../../../assets/images/copy-icon.png'" alt="Copy Icon">
-          </button>
-        </div>
-        <div class="card-body" style="color: white;">
-          <p></p>
-        </div>
-        <div class="card-footer">
-          <button class="bn3637 bn37" (click)="navigateToManageStudent()">View Class</button>
-        </div>
-      </article>
-<article class="card" style="background-image: url('../../../assets/images/CARD_BG.png'); background-size: cover; box-shadow: 5px 5px 8px #a8a8a8, -5px -5px 8px #ffffff; font-weight: bold;">
-        <div class="card-header" style="color: white;">
-          <div>
-            <span><img src="../../../assets/images/classroom.png" style="width: 50px; height: 50px; opacity: 100%;"/></span>
-            <h3>Google Drive</h3>
-          </div>
-          <button (click)="copyTextToClipboard('Google Drive')" title="Copy to Clipboard">
-            <img [src]="copiedMap['Google Drive'] ? '../../../assets/images/copied.png' : '../../../assets/images/copy-icon.png'" alt="Copy Icon">
-          </button>
-        </div>
-        <div class="card-body" style="color: white;">
-          <p></p>
-        </div>
-        <div class="card-footer">
-          <button class="bn3637 bn37" (click)="navigateToManageStudent()">View Class</button>
-        </div>
-      </article>
+  <div class="class-link2">Class Link</div>
+  <div class="update-button">
+    <div class="rectangle-23"></div>
+    <div class="update">Update</div>
+  </div>
+  <div class="class-link3">
+    <div class="class-link4">Class Link:</div>
+    <div class="class-name"></div>
+    <div class="csc-20-invitelink-bit-ly">csc20.invitelink.bit.ly</div>
+  </div>
+  <div class="class-name2">
+    <div class="class-name3">Class Name:</div>
+    <div class="class-name4"></div>
+    <div class="choose-a-class">Choose a class</div>
+    <img class="dropdown" src="dropdown0.png" />
+  </div>
+  <div class="create-class-card"></div>
+  <div class="create-class2">Create Class</div>
+  <img class="card-bg-1" src="../../../assets/images/CARD_BG.png" />
+  <div class="create-button">
+    <button class="rectangle-9 create">Create</button>
+  <div class="class-name2">
+    <div class="class-name5">Class Name:</div>
+    <div class="class-name6"></div>
+    <input type="text" class="enter-your-class-name" placeholder="Enter your class name">
+</div>
+  <div class="class-time">
+    <div class="class-schedule">Class Schedule:</div>
+    <div class="rectangle-7"></div>
+    <div class="rectangle-8"></div>
+    <div class="select-a-day">Select a day</div>
+    <div class="select-a-time">Select a time</div>
+    <img class="dropdown2" src="dropdown1.png" />
+    <img class="dropdown3" src="dropdown2.png" />
+  </div>
+  <div class="grace-period">
+    <div class="grace-period2">Grace Period:</div>
+    <div class="component-3-component-1">
+      <div class="grace-period3"></div>
+      <div class="select-a-time-period">Select a time period</div>
+      <img class="dropdown4" src="dropdown3.png" />
     </div>
-    <div class="pagination">
-      <button id="prevBtn">Previous</button>
-      <span>Page 1 of 1</span>
-      <button id="nextBtn">Next</button>
-    </div>    
+  </div>
+  <div class="class-card-2">
+    <div class="group-1">
+      <div class="rectangle-42"></div>
+      <img class="card-bg-2" src="../../../assets/images/CARD_BG.png" />
+    </div>
+    <div class="subject-code">CSC20</div>
+    <div class="subject">Figma</div>
+    <div class="rectangle-14"></div>
+    <img class="ellipse-1" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-2" src="../../../assets/images/avatar-2.jpg" />
+    <img class="ellipse-3" src="../../../assets/images/avatar-3.jpg" />
+    <img class="ellipse-4" src="../../../assets/images/avatar-4.jpg" />
+    <div class="ellipse-40"></div>
+    <div class="_24">+24</div>
+  </div>
+  <div class="class-card-3">
+    <div class="group-1">
+      <div class="rectangle-43"></div>
+      <img class="card-bg-22" src="../../../assets/images/CARD_BG.png" />
+    </div>
+    <div class="subject-code2">CSC20</div>
+    <div class="subject2">Figma</div>
+    <div class="rectangle-142"></div>
+    <img class="ellipse-12" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-22" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-32" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-42" src="../../../assets/images/avatar-1.jpg" />
+    <div class="ellipse-402"></div>
+    <div class="_242">+24</div>
+  </div>
+  <div class="class-card-1">
+    <div class="group-1">
+      <div class="rectangle-44"></div>
+      <img class="card-bg-23" src="../../../assets/images/CARD_BG.png" />
+    </div>
+    <div class="subject-code3">CSC20</div>
+    <div class="subject3">Figma</div>
+    <div class="rectangle-143"></div>
+    <img class="ellipse-13" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-23" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-33" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-43" src="../../../assets/images/avatar-1.jpg" />
+    <div class="ellipse-403"></div>
+    <div class="_243">+24</div>
+  </div>
+  <div class="class-card-5">
+    <div class="group-1">
+      <div class="rectangle-45"></div>
+      <img class="card-bg-24" src="../../../assets/images/CARD_BG.png" />
+    </div>
+    <div class="csc-20">CSC20</div>
+    <div class="figma">Figma</div>
+    <div class="rectangle-144"></div>
+    <img class="ellipse-14" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-24" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-34" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-44" src="../../../assets/images/avatar-1.jpg" />
+    <div class="ellipse-404"></div>
+    <div class="_244">+24</div>
+  </div>
+  <div class="class-card-6">
+    <div class="group-1">
+      <div class="rectangle-46"></div>
+      <img class="card-bg-25" src="../../../assets/images/CARD_BG.png" />
+    </div>
+    <div class="subject-code4">CSC20</div>
+    <div class="subject4">Figma</div>
+    <div class="rectangle-145"></div>
+    <img class="ellipse-15" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-25" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-35" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-45" src="../../../assets/images/avatar-1.jpg" />
+    <div class="ellipse-405"></div>
+    <div class="_245">+24</div>
+  </div>
+  <div class="class-card-4">
+    <div class="group-1">
+      <div class="rectangle-47"></div>
+      <img class="card-bg-26" src="../../../assets/images/CARD_BG.png" />
+    </div>
+    <div class="subject-code5">CSC20</div>
+    <div class="subject5">Figma</div>
+    <div class="rectangle-146"></div>
+    <img class="ellipse-16" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-26" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-36" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-46" src="../../../assets/images/avatar-1.jpg" />
+    <div class="ellipse-406"></div>
+    <div class="_246">+24</div>
+  </div>
+  <div class="class-card-8">
+    <div class="group-1">
+      <div class="rectangle-48"></div>
+      <img class="card-bg-27" src="../../../assets/images/CARD_BG.png" />
+    </div>
+    <div class="subject-code6">CSC20</div>
+    <div class="subject6">Figma</div>
+    <div class="rectangle-147"></div>
+    <img class="ellipse-17" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-27" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-37" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-47" src="../../../assets/images/avatar-1.jpg" />
+    <div class="ellipse-407"></div>
+    <div class="_247">+24</div>
+  </div>
+  <div class="class-card-9">
+    <div class="group-1">
+      <div class="rectangle-49"></div>
+      <img class="card-bg-28" src="../../../assets/images/CARD_BG.png" />
+    </div>
+    <div class="subject-code7">CSC20</div>
+    <div class="subject7">Figma</div>
+    <div class="rectangle-148"></div>
+    <img class="ellipse-18" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-28" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-38" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-48" src="../../../assets/images/avatar-1.jpg" />
+    <div class="ellipse-408"></div>
+    <div class="_248">+24</div>
+  </div>
+  <div class="class-card-7">
+    <div class="group-1">
+      <div class="rectangle-410"></div>
+      <img class="card-bg-29" src="../../../assets/images/CARD_BG.png" />
+    </div>
+    <div class="subject-code8">CSC20</div>
+    <div class="subject8">Figma</div>
+    <div class="rectangle-149"></div>
+    <img class="ellipse-19" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-29" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-39" src="../../../assets/images/avatar-1.jpg" />
+    <img class="ellipse-49" src="../../../assets/images/avatar-1.jpg" />
+    <div class="ellipse-409"></div>
+    <div class="_249">+24</div>
   </div>
 </div>
