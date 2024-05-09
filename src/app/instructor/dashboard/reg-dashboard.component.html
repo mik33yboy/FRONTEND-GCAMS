@@ -1,288 +1,185 @@
+<div class="admin-page">
+  <div class="card-1">
+    <div class="card"></div>
+    <img class="rectangle-233" src="../../../assets/images/CARD_BG.png" />
+    <div class="_230">230</div>
+    <div class="total-classes">Total Classes</div>
+  </div>
+  <div class="card-2">
+    <div class="rectangle-253"></div>
+    <img class="rectangle-2332" src="../../../assets/images/CARD_BG.png" />
+    <div class="_2302">230</div>
+    <div class="total-classes2">Total Classes</div>
+  </div>
+  <div class="card-3">
+    <div class="rectangle-254"></div>
+    <img class="rectangle-2333" src="../../../assets/images/CARD_BG.png" />
+    <div class="_2303">230</div>
+    <div class="total-classes3">Total Classes</div>
+  </div>
 
 
-  <div class="row">
-    <!-- [ sample-page ] start -->
-    <div class="col-xl-4 col-md-6">
-      <div class="card bg-dark-green dashnum-card text-white overflow-hidden" style="background-image: url('../../../assets/images/CARD_BG.png'); background-size: cover;">
-        <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <div class="avtar">
-                <i class="text-white ti ti-folder"></i>
-              </div>
-            </div>
-        
-                
-          </div>
-          <div class="row">
-            <div class="col">
-              <span class="text-white d-block fs-1 fw-bold my-2">9 <i class="ti ti-arrow-up-right-circle opacity-50"></i></span>        
-              <p class="mb-0 opacity-50">Your Classes</p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="student-status2">
+    <div class="rectangle-245"></div>
+    <div class="student-body">
+      <table class="custom-table">
+        <tr *ngFor="let logDashboard of logDashboardsData.slice(0, 5)" >
+          <td style="width: 50px; height: 50px;">
+            <img
+            [src]="logDashboard.picture"
+            style="width: 65%; height: 60%; object-fit: cover; border-radius: 50%; "
+            alt="Circle Image"
+            />
+          </td>
+          <td>{{ logDashboard.lastName }}</td>
+          <td>{{ logDashboard.firstName }}</td>
+          <td>{{ logDashboard.middleName }}</td>
+          <td>
+            <select id="mySelect">
+              <option value="cleared" class="late-box">Pending</option>
+              <option value="pending" class="absent-box">FDA</option>
+              <option value="not-valid" class="drop-box">DROP</option>
+            </select>
+          </td>
+        </tr>
+      </table>
     </div>
-    
-  
-  
-    <div class="col-xl-4 col-md-6">
-      <div class="card bg-dark-green dashnum-card text-white overflow-hidden" style="background-image: url('../../../assets/images/CARD_BG.png'); background-size: cover;">
-        <span class="round small"></span>
-        <span class="round big"></span>
-        <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <div class="avtar">
-                <i class="text-white ti ti-user"></i>
-              </div>
-            </div>
-            <div class="col-auto">
-              <ul ngbNav class="nav-tabs nav-pills" #nav="ngbNav" (navChange)="onNavChange($event)">
-                <li class="nav-item" [ngbNavItem]="1">
-                  <ng-template ngbNavContent>
-                    <div class="row">
-                      <div class="col-6">
-                        <span class="text-white d-block fs-1 fw-bold my-2">232<i class="ti ti-arrow-up-right-circle opacity-50"></i></span>
-                        <p class="mb-0 opacity-50">Your Students</p>
-                      </div>
-                    </div>
-                  </ng-template>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div [ngbNavOutlet]="nav"> </div>
-        </div>
-      </div>
-    </div>
-  
-   
-  <!-- Inside the existing <div class="col-xl-4 col-md-6"> -->
-    <div class="col-xl-4 col-md-6">
-      <div class="card bg-dark-green dashnum-card text-white overflow-hidden" style="background-image: url('../../../assets/images/CARD_BG.png'); background-size: cover;">
-        <span class="round small"></span>
-        <span class="round big"></span>
-        <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <div class="avtar">
-                <i class="text-white ti ti-user"></i> <!-- New icon for students -->
-              </div>
-            </div>
-            <div class="col-auto">
-              <!-- If you want to keep the dropdown menu, you can add it here -->
-            </div>
-          </div>
-          <span class="text-white d-block fs-1 fw-bold my-2">222 <i class="ti ti-arrow-up-right-circle opacity-50"></i></span>
-          <p class="mb-0 opacity-50">Your Attendance Generated</p> <!-- New card displaying Total Students -->
-        </div>
-      </div>
-    </div>
-    
-  
-  
-    <div class="col-xl-8 col-md-12">
-      <div class="card">
-        <div class="card-body">
-          <div class="row mb-3 align-items-center">
-            <div class="col">
-              <h3>Overall Attendance Chart </h3>
-            </div>
-            <div class="col-auto">
-              <select class="form-select">
-                <option>1ST SEMESTER</option>
-                <option>2ND SEMESTER</option>
-              </select>
-            </div>
-          </div>
-          <div id="growthChart">
-            <apx-chart
-              [series]="chartOptions.series"
-              [chart]="chartOptions.chart"
-              [dataLabels]="chartOptions.dataLabels"
-              [plotOptions]="chartOptions.plotOptions"
-              [responsive]="chartOptions.responsive"
-              [xaxis]="chartOptions.xaxis"
-              [colors]="chartOptions.colors"
-              [grid]="chartOptions.grid"
-              [tooltip]="chartOptions.tooltip"
-            ></apx-chart>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-  
-    
-    <div class="col-xl-4 col-md-12">
-      <div class="card mb-3"> <!-- Added margin-bottom to the card -->
-        <div class="card-body">
-          <div class="row mb-3 align-items-center"> <!-- Removed mb-3 class to remove margin-bottom -->
-            <div class="col">
-              <h3>Student Status</h3>
-            </div>
-          </div>
-          <table class="responsive-table">
-            <thead>
-              <tr>
-                <th>LAST NAME</th>
-                <th>FIRST NAME</th>
-                <th>CLASS</th>
-                <th>LATE</th>
-                <th>ABSENT</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Rosario</td>
-                <td>Mark</td>
-                <td>CodeChum</td>
-                <td>3</td>
-                <td>5</td>
-                <td>
-                  <select id="mySelect">
-                    <option value="cleared" class="late-box">Pending</option>
-                    <option value="pending" class="absent-box">FDA</option>
-                    <option value="not-valid" class="drop-box">DROP</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>Benitez</td>
-                <td>Grace</td>
-                <td>Programming</td>
-                <td>3</td>
-                <td>5</td>
-                <td>
-                  <select id="mySelect">
-                    <option value="cleared" class="late-box">Pending</option>
-                    <option value="pending" class="absent-box">FDA</option>
-                    <option value="not-valid" class="drop-box">DROP</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>Trinidad</td>
-                <td>Hannah</td>
-                <td>JavaScript</td>
-                <td>3</td>
-                <td>5</td>
-                <td>
-                  <select id="mySelect">
-                    <option value="cleared" class="late-box">Pending</option>
-                    <option value="pending" class="absent-box">FDA</option>
-                    <option value="not-valid" class="drop-box">DROP</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>Hernandez</td>
-                <td>Maxkie</td>
+    <div class="student-header"></div>
+    <div class="student-status3">Student Status</div>
+  </div>
 
-                <td>PHP</td>
-                <td>3</td>
-                <td>5</td>
-                <td>
-                  <select id="mySelect">
-                    <option value="cleared" class="late-box">Pending</option>
-                    <option value="pending" class="absent-box">FDA</option>
-                    <option value="not-valid" class="drop-box">DROP</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>Lopez</td>
-                <td>John</td>
-                <td>MySQL</td>
-                <td>3</td>
-                <td>5</td>
-                <td>
-                  <select id="mySelect">
-                    <option value="cleared" class="late-box">Pending</option>
-                    <option value="pending" class="absent-box">FDA</option>
-                    <option value="not-valid" class="drop-box">DROP</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>Pascual</td>
-                <td>Tracy</td>
-                <td>CodeChum</td>
-                <td>3</td>
-                <td>5</td>
-                <td>
-                <select id="mySelect">
-                  <option value="cleared" class="late-box">Pending</option>
-                  <option value="pending" class="absent-box">FDA</option>
-                  <option value="not-valid" class="drop-box">DROP</option>
-                </select>
-              </td>
-              </tr>
-              <tr>
-                <td>Molino</td>
-                <td>Luis</td>
-                <td>C++</td>
-                <td>3</td>
-                <td>5</td>
-                <td>
-                <select id="mySelect">
-                  <option value="cleared" class="late-box">Pending</option>
-                  <option value="pending" class="absent-box">FDA</option>
-                  <option value="not-valid" class="drop-box">DROP</option>
-                </select>
-              </td>
-              </tr>
-              <tr>
-                <td>Rosario</td>
-                <td>Mark</td>
-                <td>CodeChum</td>
-                <td>3</td>
-                <td>5</td>
-                <td>
-                  <select id="mySelect">
-                    <option value="cleared" class="late-box">Pending</option>
-                    <option value="pending" class="absent-box">FDA</option>
-                    <option value="not-valid" class="drop-box">DROP</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>Benitez</td>
-                <td>Grace</td>
-                <td>Programming</td>
-                <td>3</td>
-                <td>5</td>
-                <td>
-                  <select id="mySelect">
-                    <option value="cleared" class="late-box">Pending</option>
-                    <option value="pending" class="absent-box">FDA</option>
-                    <option value="not-valid" class="drop-box">DROP</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>Trinidad</td>
-                <td>Hannah</td>
-                <td>JavaScript</td>
-                <td>3</td>
-                <td>5</td>
-                <td>
-                  <select id="mySelect">
-                    <option value="cleared" class="late-box">Pending</option>
-                    <option value="pending" class="absent-box">FDA</option>
-                    <option value="not-valid" class="drop-box">DROP</option>
-                  </select>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-                </div>
-              </div>
+
+
+  <div class="active-students2">
+    <div class="rectangle-2452"></div>
+    <div class="active-body">
+      <table class="custom-table">
+        <tr *ngFor="let logDashboard of logDashboardsData.slice(0, 5)" >
+          <td>{{ logDashboard.lastName }}, {{ logDashboard.firstName }}</td>
+          <td colspan="3">
+            <div class="progress-bar__wrapper">
+              <label class="progress-bar__value" htmlFor="progress-bar"></label>
+              <progress id="progress-bar" value="95" max="100"></progress>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="active-header"></div>
+    <div class="active-students3">Active Students</div>
+  </div>
+
+
+  <div class="attendance-reports2">
+    <div class="rectangle-247"></div>
+    <div class="att-body"></div>
+    <div class="att-header"></div>
+    <div class="attendance-reports3">Attendance Reports</div>
+  </div>
+
+
+  <div class="calendar2">
+    <div class="rectangle-2472"></div>
+    <div class="calendar-body">
+      <div class="calendar">
+        <div class="top">
+          <label>
+            <select class="month" name="months" size="1">
+              <option class="mon" name="1">January</option>
+              <option class="mon" name="2">February</option>
+              <option class="mon" name="3">March</option>
+              <option class="mon" name="4">April</option>
+              <option class="mon" name="5">May</option>
+              <option class="mon" name="6">June</option>
+              <option class="mon" name="7">July</option>
+              <option class="mon" name="8">August</option>
+              <option class="mon" name="9">September</option>
+              <option class="mon" name="10">October</option>
+              <option class="mon" name="11">November</option>
+              <option class="mon" name="12">December</option>
+            </select>
+          </label>
+          <label>
+            <select class="year" name="years" size="1">
+              <option class="yer">2030</option>
+              <option class="yer">2029</option>
+              <option class="yer">2028</option>
+              <option class="yer">2027</option>
+              <option class="yer">2026</option>
+              <option class="yer">2025</option>
+              <option class="yer">2024</option>
+              <option class="yer">2023</option>
+              <option class="yer">2022</option>
+              <option class="yer">2021</option>
+              <option class="yer">2020</option>
+              <option class="yer">2019</option>
+              <option class="yer">2018</option>
+              <option class="yer">2017</option>
+              <option class="yer">2016</option>
+            </select>
+          </label>
+        </div>
+        <div class="week">
+          <div class="week__day">Mon</div>
+          <div class="week__day">Tues</div>
+          <div class="week__day">Weds</div>
+          <div class="week__day">Thurs</div>
+          <div class="week__day">Fri</div>
+          <div class="week__day">Sat</div>
+          <div class="week__day">Sun</div>
+        </div>
+        <div class="date">
+          <div class="date__row">
+            <div class="date__number">1</div>
+            <div class="date__number">2</div>
+            <div class="date__number">3</div>
+            <div class="date__number">4</div>
+            <div class="date__number">5</div>
+            <div class="date__number">6</div>
+            <div class="date__number">7</div>
+          </div>
+          <div class="date__row">
+            <div class="date__number">8</div>
+            <div class="date__number">9</div>
+            <div class="date__number">10</div>
+            <div class="date__number">11</div>
+            <div class="date__number">12</div>
+            <div class="date__number">13</div>
+            <div class="date__number">14</div>
+          </div>
+          <div class="date__row">
+            <div class="date__number">15</div>
+            <div class="date__number">16</div>
+            <div class="date__number">17</div>
+            <div class="date__number">18</div>
+            <div class="date__number">19</div>
+            <div class="date__number">20</div>
+            <div class="date__number">21</div>
+          </div>
+          <div class="date__row">
+            <div class="date__number">22</div>
+            <div class="date__number">23</div>
+            <div class="date__number">24</div>
+            <div class="date__number">25</div>
+            <div class="date__number">26</div>
+            <div class="date__number">27</div>
+            <div class="date__number">28</div>
+          </div>
+          <div class="date__row">
+            <div class="date__number">29</div>
+            <div class="date__number">30</div>
+            <div class="date__number">31</div>
+            <div class="date__number"></div>
+            <div class="date__number"></div>
+            <div class="date__number"></div>
+            <div class="date__number"></div>
+          </div>
         </div>
       </div>
-  
-  
-  
-  
+      <div class="choosen"></div>
+    </div>
+    <div class="calendar-header"></div>
+    <div class="calendar3">Calendar</div>
+  </div>
+  <div class="rectangle-221"></div>
+</div>

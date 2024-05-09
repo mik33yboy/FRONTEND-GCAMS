@@ -31,7 +31,6 @@ export type ChartOptions = {
   chart: ApexChart;
   dataLabels: ApexDataLabels;
   labels: any;
-  fill: ApexFill;
   plotOptions: ApexPlotOptions;
   responsive: ApexResponsive[];
   xaxis: ApexXAxis;
