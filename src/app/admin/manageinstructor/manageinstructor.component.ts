@@ -63,13 +63,11 @@ export class SysManageInstructorComponent {
         threshold: 0.6, 
         location: 0, 
         distance: 100,
-        maxResults: 5
+        maxResults: 10
       };
 
       const fuse = new Fuse(this.instructors, options);
-
       const results = fuse.search(this.lastName.trim().toLowerCase());
-
       this.instructors = results.map((result) => result.item);
     }
   }

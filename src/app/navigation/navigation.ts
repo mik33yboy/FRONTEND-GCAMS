@@ -34,20 +34,20 @@ const NavigationItems = [
       },
       {
         id: 'manageinstructor',
-        title: 'Instructors',
+        title: 'Instructor Dashboard',
         type: 'item',
         classes: 'nav-item',
         url: '/admin/manageinstructor', // Updated URL to match the route path
-        icon: 'ti ti-user',
+        icon: 'ti ti-user'
       },
       {
         id: 'managestudents',
-        title: 'Students',
+        title: 'Student Dashboard',
         type: 'item',
         classes: 'nav-item',
         url: '/admin/managestudents', // Updated URL to match the route path
         icon: 'ti ti-user'
-      },
+      }
     ]
   },
   {
@@ -63,7 +63,7 @@ const NavigationItems = [
         url: '/login',
         icon: 'ti ti-logout',
         breadcrumbs: false
-      },
+      }
     ]
   }
 ];

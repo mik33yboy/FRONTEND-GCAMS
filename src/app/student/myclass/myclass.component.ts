@@ -2,7 +2,7 @@
 import { Component, ViewChild,  ElementRef, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-
+import axios from 'axios';
 // project import
 import { SharedModule } from '../../shared/shared.module';
 
@@ -115,6 +115,27 @@ export class MyClassComponent implements AfterViewInit {
     {
     }
   ];
+  subjects: any[] = [];
+
+  async Fetchclasses() {
+    try{
+      const response = await axios.get('https://66216a2427fcd16fa6c6e28f.mockapi.io/API/V1/users');
+      this.subjects = response.data.map((user) => ({
+        id: user.id,
+        subject:user.subject,
+          block:user.block
+        
+        
+      }));
+
+    }
+    catch {
+      
+
+
+    }
+
+  }
 
   
 }
