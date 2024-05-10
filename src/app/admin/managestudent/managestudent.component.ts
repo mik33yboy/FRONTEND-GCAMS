@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../shared/shared.module';
 import axios from 'axios';
-
+import Fuse from 'fuse.js';
 
 @Component({
   selector: 'app-sample-page',
@@ -25,7 +25,7 @@ export class SysManageStudentsComponent {
   students: any[] = [];
   lastName: any;
 
-  constructor(){}
+  constructor() {}
 
   ngOnInit() {
     this.fetchStudents();
@@ -37,14 +37,14 @@ export class SysManageStudentsComponent {
 
       this.students = response.data.map((user) => ({
         id: user.id,
-        lastName: user.lastname, 
-        firstName: user.firstname, 
-        middleName: user.middlename, 
+        lastName: user.lastname,
+        firstName: user.firstname,
+        middleName: user.middlename,
         numberOfClass: parseInt(user.numberofclass, 10),
-        rfid: 'RFID' + user.rfid, 
-        mobile: user.mobile, 
-        domainEmail: user.domainemail, 
-        altEmail: user.altemail, 
+        rfid: 'RFID' + user.rfid,
+        mobile: user.mobile,
+        domainEmail: user.domainemail,
+        altEmail: user.altemail,
         picture: user.picture
       }));
 
@@ -55,12 +55,23 @@ export class SysManageStudentsComponent {
   }
 
   Search() {
-    if (this.lastName === "") {
+    if (this.lastName === '') {
       this.ngOnInit();
     } else {
-      this.students = this.students.filter(res => {
-        return res.lastName.toLocaleLowerCase().match(this.lastName.toLocaleLowerCase());
-      });
+      const options = {
+        keys: ['lastName'],
+        includeScore: true,
+        threshold: 0.6,
+        location: 0,
+        distance: 100,
+        maxResults: 5
+      };
+
+      const fuse = new Fuse(this.students, options);
+
+      const results = fuse.search(this.lastName.trim().toLowerCase());
+
+      this.students = results.map((result) => result.item);
     }
   }
 }

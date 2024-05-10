@@ -25,7 +25,7 @@ const NavigationItems = [
     children: [
       {
         id: 'sysdashboard',
-        title: 'Administrator',
+        title: 'Administrator Dashboard',
         type: 'item',
         classes: 'nav-item',
         url: '/admin/admindashboard', // Updated URL to match the route path
