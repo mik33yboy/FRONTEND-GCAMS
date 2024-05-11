@@ -48,33 +48,36 @@ export type ChartOptions = {
   styleUrls: ['./myclass.component.scss']
 })
 export class MyClassComponent implements AfterViewInit {
-  
   @ViewChild('openModalBtn') openModalBtn!: ElementRef;
   @ViewChild('myModal') modal!: ElementRef;
   @ViewChild('closeModalBtn') closeModalBtn!: ElementRef;
 
   chartOptions = {
-	  animationEnabled: true,
-	  theme: "dark2",
-	  exportEnabled: true,
-	  title: {
-		  text: "Developer Work Week"
-	  },
-	  subtitles: [{
-		  text: "Median hours/week"
-	  }],
-	  data: [{
-		  type: "pie", //change type to column, line, area, doughnut, etc
-		  indexLabel: "{name}: {y}%",
-		  dataPoints: [
-		  	{ name: "Overhead", y: 9.1 },
-		  	{ name: "Problem Solving", y: 3.7 },
-		  	{ name: "Debugging", y: 36.4 },
-		  	{ name: "Writing Code", y: 30.7 },
-		  	{ name: "Firefighting", y: 20.1 }
-		  ]
-	  }]
-	}
+    animationEnabled: true,
+    theme: 'dark2',
+    exportEnabled: true,
+    title: {
+      text: 'Developer Work Week'
+    },
+    subtitles: [
+      {
+        text: 'Median hours/week'
+      }
+    ],
+    data: [
+      {
+        type: 'pie', //change type to column, line, area, doughnut, etc
+        indexLabel: '{name}: {y}%',
+        dataPoints: [
+          { name: 'Overhead', y: 9.1 },
+          { name: 'Problem Solving', y: 3.7 },
+          { name: 'Debugging', y: 36.4 },
+          { name: 'Writing Code', y: 30.7 },
+          { name: 'Firefighting', y: 20.1 }
+        ]
+      }
+    ]
+  };
 
   constructor(private router: Router) {}
 
@@ -83,17 +86,17 @@ export class MyClassComponent implements AfterViewInit {
   }
 
   setupModal(): void {
-    this.openModalBtn.nativeElement.addEventListener("click", () => {
-      this.modal.nativeElement.style.display = "block";
+    this.openModalBtn.nativeElement.addEventListener('click', () => {
+      this.modal.nativeElement.style.display = 'block';
     });
 
-    this.closeModalBtn.nativeElement.addEventListener("click", () => {
-      this.modal.nativeElement.style.display = "none";
+    this.closeModalBtn.nativeElement.addEventListener('click', () => {
+      this.modal.nativeElement.style.display = 'none';
     });
 
-    window.addEventListener("click", (event) => {
+    window.addEventListener('click', (event) => {
       if (event.target === this.modal.nativeElement) {
-        this.modal.nativeElement.style.display = "none";
+        this.modal.nativeElement.style.display = 'none';
       }
     });
   }
@@ -104,40 +107,37 @@ export class MyClassComponent implements AfterViewInit {
 
   // private props
   @ViewChild('growthChart') growthChart: ChartComponent;
-  @ViewChild("pieChart") chart: ChartComponent;
+  @ViewChild('pieChart') chart: ChartComponent;
   chartOptions1: Partial<ChartOptions>;
   monthChart: any;
   yearChart: any;
   colorChart = ['#673ab7'];
 
-
-  ListGroup = [
-    {
-    }
-  ];
   subjects: any[] = [];
 
-  async Fetchclasses() {
-    try{
-      const response = await axios.get('https://66216a2427fcd16fa6c6e28f.mockapi.io/API/V1/users');
-      this.subjects = response.data.map((user) => ({
-        id: user.id,
-        subject:user.subject,
-          block:user.block
-        
-        
-      }));
 
-    }
-    catch {
-      
-
-
-    }
-
+  ngOnInit(): void {
+    this.Fetchclasses();
   }
 
   
+  async Fetchclasses() {
+    try {
+      const response = await axios.get('https://56b525c0-be3f-407e-b7f9-83cc60ebcc39.mock.pstmn.io/Classes');
+      // Assuming the structure of the response matches the new JSON structure you've provided
+      console.log('Raw data received:', response.data);
+
+      this.subjects = response.data.map((classInfo) => ({
+        id: classInfo.id,
+        subject: classInfo.block.class1.subject,
+        instructor: classInfo.class1.instructor,
+        time: classInfo.class1.time
+      }));
+      console.log('Fetched subjects:', this.subjects);
+    } catch (error) {
+      console.error('Error fetching subjects: ', error);
+    }
+  }
 }
 
 
