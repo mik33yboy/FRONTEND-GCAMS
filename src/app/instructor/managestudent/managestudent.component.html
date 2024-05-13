@@ -75,14 +75,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr *ngFor="let notification of notifications">
             <td style="width: 70px; height: 70px;">
-              <img src="../../../assets/images/avatar-1.jpg" style="width: 65px; height: 60px; object-fit: cover; border-radius: 50%;" alt="Circle Image">
+              <img [src]="notification.picture" style="width: 65px; height: 60px; object-fit: cover; border-radius: 50%;" alt="Circle Image">
                                 </td>
-            <td>Fedeluz</td>
-            <td>Grace</td>
-            <td>03-12-2024 : 7:00:32 PM</td>
-            <td>Send a request to join your CSC02 class.</td>
+            <td>{{notification.lastName}}</td>
+            <td>{{notification.firstName}}</td>
+            <td>{{notification.numberOfClass}}</td>
+            <td>{{notification.rfid}}</td>
           <td><div class="primary-container">
            <button class="primary" (click)="navigateToStudentProfile()">Accept</button>
           </div>
@@ -93,91 +93,7 @@
          </div>
        </td>
           </tr>
-          <tr>
-            <td style="width: 70px; height: 70px;">
-              <img src="../../../assets/images/avatar-2.jpg" style="width: 65px; height: 60px; object-fit: cover; border-radius: 50%;" alt="Circle Image"></td>
-            <td>Gimeo</td>
-            <td>Mae</td>
-            <td>03-12-2024 : 7:00:32 PM</td>
-            <td>Send a request to join your CSC02 class.</td>
-            <td><div class="primary-container">
-              <button class="primary" (click)="navigateToStudentProfile()">Accept</button>
-             </div>
-           </td>
-           <td><div class="primary-container">
-   
-             <button id="declineButton">Decline</button>
-            </div>
-          </td>
-          </tr>
-          <tr>
-            <td style="width: 70px; height: 70px;">
-              <img src="../../../assets/images/avatar-3.jpg" style="width: 65px; height: 60px; object-fit: cover; border-radius: 50%;" alt="Circle Image"></td>
-            <td>Rosete</td>
-            <td>Sonny</td>
-            <td>03-12-2024 : 7:00:32 PM</td>
-            <td>Send a request to join your CSC02 class.</td>
-            <td><div class="primary-container">
-              <button class="primary" (click)="navigateToStudentProfile()">Accept</button>
-             </div>
-           </td>
-           <td><div class="primary-container">
-   
-             <button id="declineButton">Decline</button>
-            </div>
-          </td>
-          </tr>
-          <tr>
-            <td style="width: 70px; height: 70px;">
-              <img src="../../../assets/images/avatar-4.jpg" style="width: 65px; height: 60px; object-fit: cover; border-radius: 50%;" alt="Circle Image"></td>
-            <td>Bangal</td>
-            <td>Celine</td>
-            <td>03-12-2024 : 7:00:32 PM</td>
-            <td>Send a request to join your CSC02 class.</td>
-            <td><div class="primary-container">
-              <button class="primary" (click)="navigateToStudentProfile()">Accept</button>
-             </div>
-           </td>
-           <td><div class="primary-container">
-   
-             <button id="declineButton">Decline</button>
-            </div>
-          </td>
-          </tr>
-          <tr>
-            <td style="width: 70px; height: 70px;">
-              <img src="../../../assets/images/avatar-5.jpg" style="width: 65px; height: 60px; object-fit: cover; border-radius: 50%;" alt="Circle Image"></td>
-            <td>Natividad</td>
-            <td>Robert</td>
-            <td>03-12-2024 : 7:00:32 PM</td>
-            <td>Send a request to join your CSC02 class.</td>
-            <td><div class="primary-container">
-              <button class="primary" (click)="navigateToStudentProfile()">Accept</button>
-             </div>
-           </td>
-           <td><div class="primary-container">
-  
-             <button id="declineButton">Decline</button>
-            </div>
-          </td>
-          </tr>
-          <tr>
-            <td style="width: 70px; height: 70px;">
-              <img src="../../../assets/images/avatar-6.jpg" style="width: 65px; height: 60px; object-fit: cover; border-radius: 50%;" alt="Circle Image"></td>
-            <td>Gonzales</td>
-            <td>Angelica</td>
-            <td>03-12-2024 : 7:00:32 PM</td>
-            <td>Sent a reason for his absence in your class.</td>
-            <td><div class="primary-container">
-              <button class="primary" (click)="navigateToStudentProfile()">Accept</button>
-             </div>
-           </td>
-           <td><div class="primary-container">
-  
-             <button id="declineButton">Decline</button>
-            </div>
-          </td>
-          </tr>
+
         </tbody>
       </table>
     </div>
@@ -247,14 +163,14 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Rosario</td>
-                <td>Georgina</td>
-                <td>03-12-2024</td>
-                <td>2nd Semester</td>
-                <td>7:30:00 AM</td>
-                <td>7:22:23 AM</td>
+              <tr *ngFor="let student of students">
+                <td>{{student.id}}</td>
+                <td>{{student.lastName}}</td>
+                <td>{{student.numberOfClass}}</td>
+                <td>{{student.rfid}}</td>
+                <td>{{student.mobile}}</td>
+                <td>{{student.domainEmail}}</td>
+                <td>{{student.altEmail}}</td>
                 <td>
                   <div class="present-box">Present</div>
                 </td>
@@ -268,308 +184,14 @@
               </td>
               <div class="primary-container">
                <button class="primary" (click)="navigateToStudentProfile()">View</button>
-               
               </div>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Biaculo</td>
-                <td>Olivia</td>
-                <td>03-12-2024</td>
-                <td>2nd Semester</td>
-                <td>7:30:00 AM</td>
-                <td>7:22:23 AM</td>
-                <td>
-                  <div class="present-box">Present</div>
-                </td>
-                <td>
-                  <select id="mySelect">
-                                        <option value="pending" class="late-box">Pending</option>
-<option value="Verified" class="present-box">Verified</option>
-                    <option value="not-valid" class="absent-box">Not Valid</option>
-                    <option value="valid" class="present-box">Valid</option>
-                  </select>
-              </td>
-                <div class="primary-container">
-               <button class="primary" (click)="navigateToStudentProfile()">View</button>
-               
-              </div>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Tumangan</td>
-                <td>Jasmine</td>
-                <td>03-12-2024</td>
-                <td>2nd Semester</td>
-                <td>7:30:00 AM</td>
-                <td>7:22:23 AM</td>
-                <td>
-                  <div class="late-box">Late</div>
-                </td>
-                <td>
-                  <select id="mySelect">
-                                        <option value="pending" class="late-box">Pending</option>
-<option value="Verified" class="present-box">Verified</option>
-                    <option value="not-valid" class="absent-box">Not Valid</option>
-                    <option value="valid" class="present-box">Valid</option>
-                  </select>
-              </td>
-                <div class="primary-container">
-               <button class="primary" (click)="navigateToStudentProfile()">View</button>
-               
-              </div>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Reyes</td>
-                <td>Miles</td>
-                <td>03-12-2024</td>
-                <td>2nd Semester</td>
-                <td>7:30:00 AM</td>
-                <td>7:22:23 AM</td>
-                <td>
-                  <div class="late-box">Late</div>
-                </td>
-                <td>
-                  <select id="mySelect">
-                                        <option value="pending" class="late-box">Pending</option>
-<option value="Verified" class="present-box">Verified</option>
-                    <option value="not-valid" class="absent-box">Not Valid</option>
-                    <option value="valid" class="present-box">Valid</option>
-                  </select>
-              </td>
-                <div class="primary-container">
-               <button class="primary" (click)="navigateToStudentProfile()">View</button>
-               
-              </div>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>Salem</td>
-                <td>Marielle</td>
-                <td>03-12-2024</td>
-                <td>2nd Semester</td>
-                <td>7:30:00 AM</td>
-                <td>7:22:23 AM</td>
-                <td>
-                  <div class="present-box">Present</div>
-                </td>
 
-                <td>
-                  <select id="mySelect">
-                                        <option value="pending" class="late-box">Pending</option>
-<option value="Verified" class="present-box">Verified</option>
-                    <option value="not-valid" class="absent-box">Not Valid</option>
-                    <option value="valid" class="present-box">Valid</option>
-                  </select>
-              </td>
-                <div class="primary-container">
-               <button class="primary" (click)="navigateToStudentProfile()">View</button>
-               
-              </div>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>Rodrigo</td>
-                <td>Jericko</td>
-                <td>03-12-2024</td>
-                <td>2nd Semester</td>
-                <td>7:30:00 AM</td>
-                <td>7:22:23 AM</td>
-                <td>
-                  <div class="late-box">Late</div>
-                </td>
-                <td>
-                  <select id="mySelect">
-                                        <option value="pending" class="late-box">Pending</option>
-<option value="Verified" class="present-box">Verified</option>
-                    <option value="not-valid" class="absent-box">Not Valid</option>
-                    <option value="valid" class="present-box">Valid</option>
-                  </select>
-              </td>
-                <div class="primary-container">
-               <button class="primary" (click)="navigateToStudentProfile()">View</button>
-               
-              </div>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td>Rodriguez</td>
-                <td>Ericka</td>
-                <td>03-12-2024</td>
-                <td>2nd Semester</td>
-                <td>7:30:00 AM</td>
-                <td>7:22:23 AM</td>
-                <td>
-                  <div class="present-box">Present</div>
-                </td>
-
-                <td>
-                  <select id="mySelect">
-                                        <option value="pending" class="late-box">Pending</option>
-<option value="Verified" class="present-box">Verified</option>
-                    <option value="not-valid" class="absent-box">Not Valid</option>
-                    <option value="valid" class="present-box">Valid</option>
-                  </select>
-              </td>
-                <div class="primary-container">
-               <button class="primary" (click)="navigateToStudentProfile()">View</button>
-               
-              </div>
-              </tr>
-              <tr>
-                <td>8</td>
-                <td>Ramirez</td>
-                <td>Marvin</td>
-                <td>03-12-2024</td>
-                <td>2nd Semester</td>
-                <td>7:30:00 AM</td>
-                <td>7:22:23 AM</td>
-                <td>
-                  <div class="present-box">Present</div>
-                </td>
-
-                <td>
-                  <select id="mySelect">
-                                        <option value="pending" class="late-box">Pending</option>
-<option value="Verified" class="present-box">Verified</option>
-                    <option value="not-valid" class="absent-box">Not Valid</option>
-                    <option value="valid" class="present-box">Valid</option>
-                  </select>
-              </td>
-                <div class="primary-container">
-               <button class="primary" (click)="navigateToStudentProfile()">View</button>
-               
-              </div>
-              </tr>
-              <tr>
-                <td>9</td>
-                <td>Valdez</td>
-                <td>Matthew</td>
-                <td>03-12-2024</td>
-                <td>2nd Semester</td>
-                <td>7:30:00 AM</td>
-                <td>7:22:23 AM</td>
-                <td>
-                  <div class="present-box">Present</div>
-                </td>
-                <td>
-                  <select id="mySelect">
-                                        <option value="pending" class="late-box">Pending</option>
-<option value="Verified" class="present-box">Verified</option>
-                    <option value="not-valid" class="absent-box">Not Valid</option>
-                    <option value="valid" class="present-box">Valid</option>
-                  </select>
-              </td>
-                <div class="primary-container">
-               <button class="primary" (click)="navigateToStudentProfile()">View</button>
-               
-              </div>
-              </tr>
-              <tr>
-                <td>10</td>
-                <td>Acuyan</td>
-                <td>Gerald</td>
-                <td>03-12-2024</td>
-                <td>2nd Semester</td>
-                <td>7:30:00 AM</td>
-                <td>7:22:23 AM</td>
-                <td>
-                  <div class="present-box">Present</div>
-                </td>
-
-                <td>
-                  <select id="mySelect">
-                                        <option value="pending" class="late-box">Pending</option>
-<option value="Verified" class="present-box">Verified</option>
-                    <option value="not-valid" class="absent-box">Not Valid</option>
-                    <option value="valid" class="present-box">Valid</option>
-                  </select>
-              </td>
-                <div class="primary-container">
-               <button class="primary" (click)="navigateToStudentProfile()">View</button>
-               
-              </div>
-              </tr>
-              <tr>
-                <td>15</td>
-                <td>Jocona</td>
-                <td>Juan</td>
-                <td>03-12-2024</td>
-                <td>2nd Semester</td>
-                <td>7:30:00 AM</td>
-                <td>7:22:23 AM</td>
-                <td>
-                  <div class="present-box">Present</div>
-                </td>
-
-                <td>
-                  <select id="mySelect">
-                                        <option value="pending" class="late-box">Pending</option>
-<option value="Verified" class="present-box">Verified</option>
-                    <option value="not-valid" class="absent-box">Not Valid</option>
-                    <option value="valid" class="present-box">Valid</option>
-                  </select>
-              </td>
-                <div class="primary-container">
-               <button class="primary" (click)="navigateToStudentProfile()">View</button>
-               
-              </div>
-              </tr>
-              <tr>
-                <td>16</td>
-                <td>Calapit</td>
-                <td>Joshua</td>
-                <td>03-12-2024</td>
-                <td>2nd Semester</td>
-                <td>7:30:00 AM</td>
-                <td>7:22:23 AM</td>
-                <td>
-                  <div class="present-box">Present</div>
-                </td>
-                <td>
-                  <select id="mySelect">
-                                        <option value="pending" class="late-box">Pending</option>
-<option value="Verified" class="present-box">Verified</option>
-                    <option value="not-valid" class="absent-box">Not Valid</option>
-                    <option value="valid" class="present-box">Valid</option>
-                  </select>
-              </td>
-                <div class="primary-container">
-               <button class="primary" (click)="navigateToStudentProfile()">View</button>
-                
-              </div>
-              </tr>
-              <tr>
-                <td>17</td>
-                <td>Molino</td>
-                <td>Jerviz</td>
-                <td>03-12-2024</td>
-                <td>2nd Semester</td>
-                <td>7:30:00 AM</td>
-                <td>7:22:23 AM</td>
-                <td>
-                  <div class="late-box">Late</div>
-                </td>
-                <td>
-                  <select id="mySelect">
-                                        <option value="pending" class="late-box">Pending</option>
-<option value="Verified" class="present-box">Verified</option>
-                    <option value="not-valid" class="absent-box">Not Valid</option>
-                    <option value="valid" class="present-box">Valid</option>
-                  </select>
-              </td>
-                <div class="primary-container">
-                <button class="primary" (click)="navigateToStudentProfile()">View</button>
-                
-              </div>
-              </tr>
             </tbody>
           </table>
         </div>
       </div>
       <div class="pagination">
-        <button id="prevBtn">Previous</button>
+        <button  id="prevBtn">Previous</button>
         <span>Page 1 of 1</span>
         <button id="nextBtn">Next</button>
       </div>  

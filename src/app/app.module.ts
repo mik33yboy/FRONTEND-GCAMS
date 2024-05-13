@@ -24,6 +24,7 @@ import { StudentRoutingModule } from './student/student-routing.module';
 import { StudentModule } from './student/student.module';
 import { RegisterComponent } from './register/register.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -43,7 +44,7 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
     RegisterComponent,
     ResetpasswordComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, BrowserAnimationsModule, InstructorModule, StudentModule, StudentRoutingModule,  AdminRoutingModule, RegistrarRoutingModule,],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, BrowserAnimationsModule, InstructorModule, StudentModule, StudentRoutingModule,  AdminRoutingModule, RegistrarRoutingModule, NgxPaginationModule],
   providers: [NavigationItem,],
   bootstrap: [AppComponent]
 })

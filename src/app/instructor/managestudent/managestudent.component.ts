@@ -4,6 +4,8 @@ import { SharedModule } from '../../shared/shared.module';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import axios from 'axios';
+
 
 @Component({
   selector: 'app-sample-page',
@@ -47,7 +49,12 @@ export class ManageStudentsComponent implements OnInit {
     // Add logic to export data as PNG
     console.log('Exporting data as PNG');
   }
-    
+  
+  students: any[] = [];
+  notifications: any[] = [];
+  perPage = 10;
+  currentPage = 1;
+  totalPages = 0;
   constructor(
     private router: Router,
     private route: ActivatedRoute
@@ -56,7 +63,9 @@ export class ManageStudentsComponent implements OnInit {
   ngOnInit() {
     this.setupSelectBoxListener();
     console.log('Manage Class component initialized');
-  }
+    this.fetchStudents();
+    this.fetchNotifications();
+    }
 
   navigateToStartAttendance() {
     this.router.navigate(['/instructor/newattendance'], { relativeTo: this.route });
@@ -93,4 +102,72 @@ export class ManageStudentsComponent implements OnInit {
           });
       });
   }
+
+  async fetchStudents() {
+    try {
+      const response = await axios.get('https://66216a2427fcd16fa6c6e28f.mockapi.io/API/V1/users');
+  
+    
+      if (Array.isArray(response.data)) {
+        this.students = response.data.map(user => ({
+          id: user.id || '',
+          lastName: user.lastname || '',
+          firstName: user.firstname || '',
+          middleName: user.middlename || '',
+          numberOfClass: parseInt(user.numberofclass, 10) || 0,
+          rfid: 'RFID' + (user.rfid || ''),
+          mobile: user.mobile || '',
+          domainEmail: user.domainemail || '',
+          altEmail: user.altemail || '',
+          picture: user.picture || ''
+        }));
+  
+        this.totalPages = Math.ceil(this.students.length / this.perPage);
+  
+        console.log('Fetched students:', this.students);
+      } else {
+        console.error('Invalid data format returned from the server.');
+      }
+    } catch (error) {
+      console.error('Error fetching students:', error);
+    }
+  }
+  
+
+  async fetchNotifications() {
+    try {
+      const response = await axios.get('https://66216a2427fcd16fa6c6e28f.mockapi.io/API/V1/users');
+
+      this.notifications = response.data.map((user) => ({
+        lastName: user.lastname,
+        firstName: user.firstname,
+        numberOfClass: parseInt(user.numberofclass, 10),
+        rfid: 'RFID' + user.rfid,
+        picture: user.picture  
+      }));
+
+      console.log('Fetched notifications:', this.notifications);
+    } catch (error) {
+      console.error('Error fetching students: ', error);
+    }
+  }
+
+  get displayedData(): any[] {
+    const start = (this.currentPage - 1) * this.perPage;
+    const end = start + this.perPage;
+    return this.students.slice(start, end);
+  }
+
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+
+  prevPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+
 }
